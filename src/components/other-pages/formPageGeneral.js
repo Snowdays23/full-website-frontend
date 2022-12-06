@@ -15,12 +15,14 @@ import MenuItem from '@mui/material/MenuItem';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Home from '@mui/icons-material/Home';
+import { Typography } from '@mui/material/';
 
-export const FormPageGeneral = () => {
+export const FormPageGeneral = ({setFilledGeneral}) => {
 
-    const [value, setValue] = React.useState();
+    const [value, setValue] = React.useState('');
     
     const handleChange = (newValue) => {
+      console.log(newValue);
         setValue(newValue);
     };
 
@@ -35,6 +37,23 @@ export const FormPageGeneral = () => {
     const handleChangeUniversity = (event) => {
         setUniversity(event.target.value);
     };
+
+    const [name, setName] = React.useState('');
+    const [lastName, setLastName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [studnr, setStudnr] = React.useState('');
+    const [phonenr, setPhonenr] = React.useState('');
+
+
+    React.useEffect(() => {
+      
+      if(gender !== '' && university !== '' && name !== '' && ( value !== '' && value !== null)
+        && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' ) 
+        setFilledGeneral(true);
+      else
+        setFilledGeneral(false);
+
+    },[gender, university, value, name, lastName, email, studnr, phonenr]);
 
     const genders = [
         {
@@ -105,20 +124,30 @@ export const FormPageGeneral = () => {
       ];
     
         return (
-            <div>
+            <div>              
+              <div className='row '>
+                <div className='d-xs-block d-lg-none'>
+                  <Separator number={7} ></Separator>
+                </div>
+                <div className='col-12'>
+                    <h2 className='text-white font-josefin subtitle'>General Information</h2>
+                </div>
+                <Separator number={2} />
+              </div>
                 <div className='row justify-content-center'>
+                  
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} />
+                        <TextField id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} />
+                        <TextField id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setLastName(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Email" variant="filled" style={{width:'90%'}} />
+                        <TextField id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
@@ -136,7 +165,7 @@ export const FormPageGeneral = () => {
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} />
+                        <TextField id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} onChange = {(val) => setStudnr(val.target.value)} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
@@ -178,13 +207,13 @@ export const FormPageGeneral = () => {
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
-                        <TextField id="filled-basic" label="Phone Number" variant="filled" style={{width:'90%'}} />
+                        <TextField id="filled-basic" label="Phone Number" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
-                    <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
-                        <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
+                    <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
                             <label><Home style={{marginBottom: 5, marginRight: 5}} /> Need Accomodation <Checkbox defaultChecked /></label>
                         </div>
                     </div>

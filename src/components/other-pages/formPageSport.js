@@ -21,7 +21,15 @@ import Today from '@mui/icons-material/Today' ;
 
 export const FormPageSport = () => {
 
-    const [gear, setGear] = React.useState('');
+    const [currentGears, setCurrentGears] = React.useState();
+
+    // const addOneGear = () => {
+    //   setCurrentGears(...currentGears, "" );
+    // }
+
+    //I HAVE TO CREATE A SUBCOMP JUST DOR GEARS MENU
+
+    const [gear, setGear] = React.useState();
 
     const handleChangeGear = (event) => {
         setGear(event.target.value);
@@ -54,7 +62,7 @@ export const FormPageSport = () => {
         }
       ];
 
-      const [size, setSize] = React.useState('');
+      const [size, setSize] = React.useState();
 
     const handleChangeSize = (event) => {
         setSize(event.target.value);
@@ -83,6 +91,35 @@ export const FormPageSport = () => {
         }
       ];
 
+      const [sport, setSport] = React.useState();
+
+      const handleChangeSport = (event) => {
+        setSport(event.target.value);
+        if(event.target.value === "Skii" || event.target.value === "Snowboard") {
+          setWantSkii(true)
+          setNeedRent(false)
+        }
+        else {
+          setWantSkii(false)
+          setNeedRent(false)
+        }
+      }
+
+      const sports = [
+        {
+          value: 'None',
+          label: 'None',
+        },
+        {
+          value: 'Skii',
+          label: "Skii",
+        },
+        {
+          value: 'Snowboard',
+          label: 'Snowboard',
+        }
+      ]
+
 
       const [needRent, setNeedRent] = React.useState(false);
 
@@ -97,16 +134,42 @@ export const FormPageSport = () => {
             <div>
                 {/* <Separator number={4} ></Separator> */}
                 <div className='row justify-content-center'>
-                    <div className='col-12 col-lg-5' style={{position: "relative", right: -20 }}>
+                    <div className='row '>
+                    <div className='d-xs-block d-lg-none'>
+                            <Separator number={7} ></Separator>
+                    </div>
+                      <div className='col-12'>
+                          <h2 className='text-white font-josefin subtitle'>Sport Information</h2>
+                      </div>
+                      <Separator number={2} />
+                    </div>
+                    {/* <div className='col-12 col-lg-5' style={{position: "relative", right: -20 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
                             <label><DownhillSkiing style={{marginBottom: 5, marginRight: 5}} /> Want to ski / snowboard <Checkbox onClick={() => invertWantSkii()} /></label>
                         </div>
+                    </div> */}
+                    <div className='col-12 col-sm-12 col-lg-11' style={{position: "relative"}} >
+                        <TextField
+                        id="filled-select-sport"
+                        select
+                        label="Sport"
+                        value={sport}
+                        onChange={handleChangeSport}
+                        variant="filled"
+                        style={{width:'90%'}}
+                        >
+                            {sports.map((option) => (
+                                <MenuItem key={option.value} value={option.value}>
+                                {option.label}
+                                </MenuItem>
+                            ))}
+                        </TextField>                                   
                     </div>
-                    <div className="w-100 d-block d-lg-none">
+                    <div className="w-100">
                         <Separator number ={2} />
                     </div>
-                    <div className='col-12 col-lg-5' style={{position: "relative", right: -20 }}>
-                        <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
+                    <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
                             <label><Snowmobile style={{marginBottom: 5, marginRight: 5}} /> Need to rent {wantSkii ? <Checkbox  onClick={() => invertNeedRent()} checked={needRent}/> : <Checkbox disabled checked={needRent}/>} </label>
                         </div>
                     </div>
@@ -155,7 +218,7 @@ export const FormPageSport = () => {
                 <Separator number = {2} />
 
                 <div className='row justify-content-center'>
-                    <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative"}} >
+                    <div className='col-12 col-sm-12 col-lg-11' style={{position: "relative"}} >
                         <TextField
                         id="filled-select-gear"
                         select

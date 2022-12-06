@@ -24,9 +24,22 @@ export const FormPageCatering = () => {
 
     const [vegetarian, setVegetarian] = React.useState(false);
     const invertVegetarian = () => setVegetarian(!vegetarian); 
+
+    // React.useEffect(() => {
+
+    // },);
     
         return (
             <div>
+                <div className='row '>
+                    <div className='d-xs-block d-lg-none'>
+                            <Separator number={7} ></Separator>
+                    </div>
+                      <div className='col-12'>
+                          <h2 className='text-white font-josefin subtitle'>Nutrition Information</h2>
+                      </div>
+                      <Separator number={2} />
+                    </div>
                 <div className='row justify-content-center'>
                     <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
@@ -58,7 +71,7 @@ export const FormPageCatering = () => {
 
                     <div className='w-100'></div>
 
-                    <div className='col-12 col-sm-10' style={{position: "relative", right: -2 }}>
+                    <div className='col-11 col-sm-10' style={{position: "relative", right: 0 }}>
                     <TextField
                         id="filled-multiline-static"
                         label="Other Notes"
@@ -67,7 +80,7 @@ export const FormPageCatering = () => {
                         defaultValue=""
                         placeholder='Write anything you would like to tell us about intollerances or side notes any nutrition problem. We will try to do our best to satisfy every request'
                         variant="filled"
-                        style={{width:'90% '}}
+                        style={{width:'100% '}}
                         />
                     </div>
                 </div>
