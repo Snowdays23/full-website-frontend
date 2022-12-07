@@ -207,7 +207,7 @@ export const FormPageGeneral = ({setFilledGeneral}) => {
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
-                        <TextField id="filled-basic" label="Phone Number" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
+                        <TextField id="filled-basic" label="Phone Number" placeholder="ex:+493202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>

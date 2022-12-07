@@ -41,17 +41,18 @@ export const FormPage = () => {
       
       const [read, setRead] = React.useState(false);
       const [filledGeneral, setFilledGeneral] = React.useState(false);
+      const [filledSport, setFilledSport] = React.useState(false);
       
       const [filled, setFilled] = React.useState(false);
       
       React.useEffect(() => {
 
-        if(read && filledGeneral)
+        if(read && filledGeneral && filledSport)
             setFilled(true);
         else
             setFilled(false);
 
-      }, [read, filledGeneral]);
+      }, [read, filledGeneral, filledSport]);
     
     
         return (
@@ -104,7 +105,7 @@ export const FormPage = () => {
 
                                     <Separator number={5} ></Separator>
 
-                                    <FormPageSport />
+                                    <FormPageSport setFilledSport={setFilledSport}/>
 
                                     <Separator number={5} ></Separator>
 

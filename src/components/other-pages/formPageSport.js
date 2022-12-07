@@ -19,7 +19,7 @@ import DownhillSkiing from '@mui/icons-material/DownhillSkiing' ;
 import Snowmobile from '@mui/icons-material/Snowmobile' ;
 import Today from '@mui/icons-material/Today' ;
 
-export const FormPageSport = () => {
+export const FormPageSport = ({setFilledSport}) => {
 
     const [currentGears, setCurrentGears] = React.useState();
 
@@ -120,6 +120,11 @@ export const FormPageSport = () => {
         }
       ]
 
+      const [height, setHeiight] = React.useState('');
+      const [weight, setWeight] = React.useState('');
+      const [shoeSize, setShoeSize] = React.useState('');
+      const [helmetSize, setHelmetSize] = React.useState('');
+
 
       const [needRent, setNeedRent] = React.useState(false);
 
@@ -129,6 +134,17 @@ export const FormPageSport = () => {
 
       const invertWantSkii = () => {setWantSkii(!wantSkii)
         setNeedRent(false)};
+
+      React.useEffect(() => {
+    
+        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && helmetSize !== null) || needRent === false)) 
+          setFilledSport(true);
+        else
+          setFilledSport(false);
+  
+      },[sport, needRent, height, weight, shoeSize, helmetSize]);
+
+        
     
         return (
             <div>

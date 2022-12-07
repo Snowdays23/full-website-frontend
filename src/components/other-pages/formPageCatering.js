@@ -19,8 +19,12 @@ import Button from '@mui/material/Button';
 export const FormPageCatering = () => {
 
     const [vegan, setVegan] = React.useState(false);
-    const invertVegan = () => {setVegan(!vegan) 
-    setVegetarian(true)}; 
+    const invertVegan = () => {
+        setVegan(!vegan);
+        if(!vegan == true)
+            setVegetarian(true);
+        
+    }; 
 
     const [vegetarian, setVegetarian] = React.useState(false);
     const invertVegetarian = () => setVegetarian(!vegetarian); 
@@ -53,7 +57,11 @@ export const FormPageCatering = () => {
 
                     <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
-                            <label> Vegetarian {vegan ? <Checkbox disabled checked={vegetarian} /> : <Checkbox onClick ={ () => invertVegetarian()} />}</label>
+                            {vegan ? 
+                            <label> Vegetarian <Checkbox disabled defaultChecked /> </label>
+                            :
+                            <label> Vegetarian <Checkbox onClick ={ () => invertVegetarian()} /></label>
+                            }
                         </div>
                     </div>
 
