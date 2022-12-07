@@ -62,7 +62,7 @@ export const FormPageSport = ({setFilledSport}) => {
         }
       ];
 
-      const [size, setSize] = React.useState();
+      const [size, setSize] = React.useState('');
 
     const handleChangeSize = (event) => {
         setSize(event.target.value);
@@ -120,10 +120,9 @@ export const FormPageSport = ({setFilledSport}) => {
         }
       ]
 
-      const [height, setHeiight] = React.useState('');
+      const [height, setHeight] = React.useState('');
       const [weight, setWeight] = React.useState('');
       const [shoeSize, setShoeSize] = React.useState('');
-      const [helmetSize, setHelmetSize] = React.useState('');
 
 
       const [needRent, setNeedRent] = React.useState(false);
@@ -137,12 +136,12 @@ export const FormPageSport = ({setFilledSport}) => {
 
       React.useEffect(() => {
     
-        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && helmetSize !== null) || needRent === false)) 
+        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '') || needRent === false)) 
           setFilledSport(true);
         else
           setFilledSport(false);
   
-      },[sport, needRent, height, weight, shoeSize, helmetSize]);
+      },[sport, needRent, height, weight, shoeSize, size]);
 
         
     
@@ -197,11 +196,11 @@ export const FormPageSport = ({setFilledSport}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Height" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField id="filled-basic" onChange = {(val) => setHeight(val.target.value)} label="Height" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField id="filled-basic" label="Weight" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField id="filled-basic" onChange = {(val) => setWeight(val.target.value)} label="Weight" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                 </div> 
 
@@ -209,7 +208,7 @@ export const FormPageSport = ({setFilledSport}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Shoe Size" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
+                        <TextField id="filled-basic" onChange = {(val) => setShoeSize(val.target.value)} label="Shoe Size" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
