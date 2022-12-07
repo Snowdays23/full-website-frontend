@@ -158,6 +158,7 @@ export const FormPageGeneral = ({setFilledGeneral}) => {
                             value={value}
                             onChange={handleChange}
                             renderInput={(params) => <TextField {...params} style={{width:'90%'}} id="filled-basic" variant="filled" />}
+                            maxDate="10/12/2022"
                             />
                         </LocalizationProvider>                                        
                     </div>
