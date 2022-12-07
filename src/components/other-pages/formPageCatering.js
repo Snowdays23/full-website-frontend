@@ -29,6 +29,10 @@ export const FormPageCatering = () => {
     const [vegetarian, setVegetarian] = React.useState(false);
     const invertVegetarian = () => setVegetarian(!vegetarian); 
 
+    const [gluten, setGluten] = React.useState(false);
+
+    const [notes, setNotes] = React.useState('')
+
     // React.useEffect(() => {
 
     // },);
@@ -71,7 +75,7 @@ export const FormPageCatering = () => {
 
                     <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
-                            <label> Gluten Free <Checkbox/></label>
+                            <label> Gluten Free <Checkbox onClick ={ () => setGluten(!gluten)}  /></label>
                         </div>
                     </div>
 
@@ -86,6 +90,7 @@ export const FormPageCatering = () => {
                         multiline
                         rows={4}
                         defaultValue=""
+                        onChange = {(val) => setNotes(val.target.value)}
                         placeholder='Write anything you would like to tell us about intollerances or side notes any nutrition problem. We will try to do our best to satisfy every request'
                         variant="filled"
                         style={{width:'100% '}}
