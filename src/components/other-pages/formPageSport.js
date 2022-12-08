@@ -31,38 +31,6 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
     //I HAVE TO CREATE A SUBCOMP JUST DOR GEARS MENU
 
-    const [gear, setGear] = React.useState();
-
-    const handleChangeGear = (event) => {
-        setGear(event.target.value);
-    };
-
-    const gears = [
-        {
-          value: 'Snowboard',
-          label: 'Snowboard (+50 € / day)',
-        },
-        {
-          value: 'Snowboard_Boots',
-          label: "Snowboard Boots (+10 € / day)",
-        },
-        {
-          value: 'Skii',
-          label: 'Skii (+30 € / day)',
-        },
-        {
-          value: 'Skii_Boots',
-          label: "Skii Boots (+20 € / day)",
-        },
-        {
-          value: 'Skii_Poles',
-          label: "Skii Poles (+5 € / day)",
-        },
-        {
-          value: 'Helmet',
-          label: "Helmet (+5 € / day)",
-        }
-      ];
 
       const [size, setSize] = React.useState('');
 
@@ -137,8 +105,8 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
         setNeedRent(false)};
 
       React.useEffect(() => {
-    
-        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '') || needRent === false)) {
+          
+        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '' && (currentGears.find((value) => (value === "")) === undefined)) || needRent === false)) {
           setFilledSport(true);
           setSportData({
             height: height || null,
@@ -151,7 +119,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
           setSportData({});
         }
   
-      },[sport, needRent, height, weight, shoeSize, size]);
+      },[sport, needRent, height, weight, shoeSize, size, currentGears]);
 
         
     
@@ -244,7 +212,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 {/* <Gear/> */}
 
-                {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} /> <Separator number = {2} /> </div>)}
+                {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} currentGears={currentGears} setCurrentGears={setCurrentGears}/> <Separator number = {2} /> </div>)}
 
                 <div className='row justify-content-center'>
                     <Separator number = {2} />

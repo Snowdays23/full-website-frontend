@@ -6,12 +6,16 @@ import "../../../assets/css/bootstrap.min.css";
 import "../../../assets/css/other-pages-css/styleFormPage.css";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-export const Gear = ({id, value}) => {
+export const Gear = ({id, value, currentGears, setCurrentGears}) => {
 
     const [gear, setGear] = React.useState(value);
 
     const handleChangeGear = (event) => {
         setGear(event.target.value);
+        const actualPos = id-1;
+        const beforeCG = currentGears.slice(0, actualPos);
+        const afterCG = currentGears.slice(actualPos+1, currentGears.length);
+        setCurrentGears([...beforeCG, event.target.value, ...afterCG]);
     };
 
     const gears = [

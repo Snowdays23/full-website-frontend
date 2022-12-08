@@ -171,7 +171,8 @@ export const FormPage = () => {
                                     style={{
                                         borderRadius: 30,
                                         backgroundColor: "#fff",
-                                        color: "#a9a9a9"
+                                        color: "#a9a9a9",
+                                        padding: "20px 45px 20px 45px"
                                     }}
                                     size="large"
                                     variant="contained">Submit <Send fontSize={"inherit"} style={{marginLeft: 5}}/></Button>  

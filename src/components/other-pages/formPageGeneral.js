@@ -170,7 +170,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             value={value}
                             onChange={handleChange}
                             renderInput={(params) => <TextField {...params} style={{width:'90%'}} id="filled-basic" variant="filled" />}
-                            maxDate="10/12/2022"
+                            maxDate="12/12/2022"
                             />
                         </LocalizationProvider>                                        
                     </div>
@@ -220,7 +220,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
-                        <TextField id="filled-basic" label="Phone Number" placeholder="ex:+493202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
+                        <TextField id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
