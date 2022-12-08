@@ -115,7 +115,7 @@ export const FormPage = () => {
 
                         <div className='col-11 col-lg-8 '>
                             
-                            <div id='form' className='p-1 '>
+                            <div id='form' className='p-1 pb-5 mb-5'>
                                 <Separator number={4} ></Separator>
                                 
                                 <FormPageGeneral setFilledGeneral={setFilledGeneral} setGeneralData={setGeneralData}/>
