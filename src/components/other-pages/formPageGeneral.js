@@ -17,25 +17,24 @@ import Button from '@mui/material/Button';
 import Home from '@mui/icons-material/Home';
 import { Typography } from '@mui/material/';
 
-export const FormPageGeneral = ({setFilledGeneral}) => {
+export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
     const [value, setValue] = React.useState('');
     
-    const handleChange = (newValue) => {
-      console.log(newValue);
-        setValue(newValue);
+    const handleChange = (val) => {
+      setValue(val);
     };
 
     const [gender, setGender] = React.useState('');
 
     const handleChangeGender = (event) => {
-        setGender(event.target.value);
+      setGender(event.target.value);
     };
     
     const [university, setUniversity] = React.useState('');
 
     const handleChangeUniversity = (event) => {
-        setUniversity(event.target.value);
+      setUniversity(event.target.value);
     };
 
     const [name, setName] = React.useState('');
@@ -48,10 +47,23 @@ export const FormPageGeneral = ({setFilledGeneral}) => {
     React.useEffect(() => {
       
       if(gender !== '' && university !== '' && name !== '' && ( value !== '' && value !== null)
-        && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' ) 
+        && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' ) {
         setFilledGeneral(true);
-      else
+        setGeneralData({
+          first_name: name,
+          last_name: lastName,
+          email: email,
+          dob: value.toDate().toISOString().substr(0, 10),
+          student_nr: studnr,
+          phone: phonenr,
+          university: university,
+          gender: gender
+        });
+      }
+      else {
         setFilledGeneral(false);
+        setGeneralData({});
+      }
 
     },[gender, university, value, name, lastName, email, studnr, phonenr]);
 
