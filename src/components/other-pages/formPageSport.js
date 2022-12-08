@@ -21,7 +21,7 @@ import Snowmobile from '@mui/icons-material/Snowmobile' ;
 import Today from '@mui/icons-material/Today' ;
 import { Gear } from './subcomponents/gear';
 
-export const FormPageSport = ({setFilledSport}) => {
+export const FormPageSport = ({setFilledSport, setSportData}) => {
 
     const [currentGears, setCurrentGears] = React.useState([""]);
 
@@ -138,10 +138,18 @@ export const FormPageSport = ({setFilledSport}) => {
 
       React.useEffect(() => {
     
-        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '') || needRent === false)) 
+        if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '') || needRent === false)) {
           setFilledSport(true);
-        else
+          setSportData({
+            height: height || null,
+            weight: weight || null,
+            shoe_size: shoeSize || null,
+            helmet_size: size || null
+          });
+        } else {
           setFilledSport(false);
+          setSportData({});
+        }
   
       },[sport, needRent, height, weight, shoeSize, size]);
 
