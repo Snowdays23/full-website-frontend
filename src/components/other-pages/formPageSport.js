@@ -15,13 +15,15 @@ import MenuItem from '@mui/material/MenuItem';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import AddCircle from '@mui/icons-material/AddCircle';
+import DeleteForever from '@mui/icons-material/DeleteForever';
 import DownhillSkiing from '@mui/icons-material/DownhillSkiing' ;
 import Snowmobile from '@mui/icons-material/Snowmobile' ;
 import Today from '@mui/icons-material/Today' ;
+import { Gear } from './subcomponents/gear';
 
 export const FormPageSport = ({setFilledSport}) => {
 
-    const [currentGears, setCurrentGears] = React.useState();
+    const [currentGears, setCurrentGears] = React.useState([""]);
 
     // const addOneGear = () => {
     //   setCurrentGears(...currentGears, "" );
@@ -232,28 +234,51 @@ export const FormPageSport = ({setFilledSport}) => {
 
                 <Separator number = {2} />
 
+                {/* <Gear/> */}
+
+                {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} /> <Separator number = {2} /> </div>)}
+
                 <div className='row justify-content-center'>
-                    <div className='col-12 col-sm-12 col-lg-11' style={{position: "relative"}} >
-                        <TextField
-                        id="filled-select-gear"
-                        select
-                        label="Gear"
-                        value={gear}
-                        onChange={handleChangeGear}
-                        variant="filled"
-                        style={{width:'90%'}}
-                        >
-                            {gears.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                {option.label}
-                                </MenuItem>
-                            ))}
-                        </TextField>                                   
-                    </div>
-                    <div class="w-100"></div>
                     <Separator number = {2} />
-                    <div className='col-12 col-sm-7 col-lg-5 ' style={{position: "relative"}} >
-                      <Button variant="contained"><AddCircle/> &nbsp;&nbsp; Add Gear </Button>          
+                    <div className='col-12 col-sm-10 ' style={{position: "relative"}} >
+                      <Button 
+                        style={{
+                            borderRadius: 30,
+                            backgroundColor: "#fff",
+                            color: "#000",
+                            marginRight : 10
+                        }}
+                        size="large"
+                        variant="contained"
+                        onClick={
+                          () => {
+                            if(currentGears.length > 1)
+                              setCurrentGears(currentGears.slice(0, currentGears.length-1))
+                          }
+                        }
+                        ><DeleteForever/> <label className='d-none d-md-block ' style={{marginTop: 8}}>
+                          &nbsp;&nbsp; Remove Gear </label></Button>      
+
+                    {/* <div className='d-xs-block d-lg-none'>
+                      <div className='w-100'>
+                      <Separator number={2} ></Separator>
+                      </div>
+                    </div> */}
+
+                      <Button 
+                      style={{
+                          borderRadius: 30,
+                          backgroundColor: "#fff",
+                          color: "#000",
+                          marginLeft : 10
+                      }}
+                      size="large"
+                      variant="contained"
+                      onClick={() => {
+                        if(currentGears.length < 5)
+                          setCurrentGears([...currentGears, ""])}}
+                      ><AddCircle/> <label className='d-none d-md-block ' style={{marginTop: 8}}>
+                      &nbsp;&nbsp; Add Gear </label></Button>      
                     </div>
                 </div>
                  </div> : <div></div>}
