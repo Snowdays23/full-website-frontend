@@ -12,40 +12,23 @@ import bgWEB from './assets/img/real-mountainsWEB.png';
 import Snowfall from 'react-snowfall';
 import {useState, getWindowSize, useEffect} from 'react';
 import { FormPage } from './components/other-pages/formPage';
+import {HomePage} from './components/homePage';
+import { Route, Routes } from "react-router-dom";
+import { Home } from '@mui/icons-material';
+import { Form } from 'react-router-dom/dist';
 
-function App() {
-
-
+export default function App ()  {
 
   return (
-    <div  className="App"> 
-      {/* <div className = " wrapper-parallex ">
-          <div  className="wrapper-mountains">
-            <div className='d-none d-lg-block'>
-              <img className='wrapper-mountains-img' src={bgWEB}  alt="Picture of mountains" />
-            </div>
-            <div className='d-xs-block d-lg-none'>
-              <img className='wrapper-mountains-img' src={bg}  alt="Picture of mountains" />
-            </div>  
-            <div className="d-xs-block d-lg-none">
-              <Snowfall  snowflakeCount={80}/>
-            </div>
-            <div className="d-none d-lg-block">
-              <Snowfall  snowflakeCount={160}/>
-            </div>
-          </div>
-      </div>
-      <Header></Header>
-      <Body1></Body1>
-      <Body2></Body2>
-      <Body3></Body3>
-      <Body4></Body4>
-      <Body5></Body5> */}
+      <div  className="App"> 
 
-      <FormPage />
-           
-    </div>
-  );
+
+        <Routes> 
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/externals/form" element={<FormPage/>}/>
+        </Routes>
+            
+      </div>
+    )
 }
 
-export default App;
