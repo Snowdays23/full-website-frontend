@@ -20,27 +20,27 @@ export const Gear = ({id, value, currentGears, setCurrentGears}) => {
 
     const gears = [
         {
-          value: 'Snowboard',
+          value: 'snowboard',
           label: 'Snowboard (+50 € / day)',
         },
         {
-          value: 'Snowboard_Boots',
+          value: 'snowboardboots',
           label: "Snowboard Boots (+10 € / day)",
         },
         {
-          value: 'Skii',
+          value: 'ski',
           label: 'Skii (+30 € / day)',
         },
         {
-          value: 'Skii_Boots',
+          value: 'skiboots',
           label: "Skii Boots (+20 € / day)",
         },
         {
-          value: 'Skii_Poles',
+          value: 'poles',
           label: "Skii Poles (+5 € / day)",
         },
         {
-          value: 'Helmet',
+          value: 'helmet',
           label: "Helmet (+5 € / day)",
         }
       ];
