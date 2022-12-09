@@ -92,7 +92,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           label: 'Frankfurt School',
         },
         {
-          value: 'Maastricht',
+          value: 'MAAS',
           label: "Maastricht University",
         },
         {

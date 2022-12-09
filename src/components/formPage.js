@@ -44,7 +44,7 @@ export const FormPage = () => {
 
 
     const submitForm = async evt => {
-        return await (await fetch("http://localhost:8000/api/participants", {
+        return await (await fetch("/api/participants", {
             method: "POST",
             headers: {
                 'Content-Type': "application/json"

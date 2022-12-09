@@ -117,14 +117,19 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
         setNeedRent(false)};
 
       React.useEffect(() => {
-          
         if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '' && (currentGears.find((value) => (value === "")) === undefined)) || needRent === false)) {
           setFilledSport(true);
           setSportData({
             height: height || null,
             weight: weight || null,
             shoe_size: shoeSize || null,
-            helmet_size: size || null
+            helmet_size: size || null,
+            rented_gear: currentGears.flatMap(g => {
+              if (g && g !== "") {
+                return [{name: g}];
+              }
+              return [];
+            })
           });
         } else {
           setFilledSport(false);

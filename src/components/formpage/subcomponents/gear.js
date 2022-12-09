@@ -18,37 +18,30 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
         setCurrentGears([...beforeCG, event.target.value, ...afterCG]);
     };
 
-    let gears = [];
-
-    if(currentGears.find((value) => (value === "Helmet")) === undefined)
-      gears.push({
-        value: 'Helmet',
-        label: "Helmet (+5 € / day)"
-      });
+    let gears = [{
+      value: 'Helmet',
+      label: "Helmet (+5 € / day)"
+    }];
 
     if(sport === "Skii") {
-      if(currentGears.find((value) => (value === "Skii")) === undefined)
-        gears.push({
-            value: 'Skii',
-            label: 'Skii (+30 € / day)'
-        });
-      if(currentGears.find((value) => (value === "Skii_Boots")) === undefined)
-        gears.push({
-          value: 'Skii_Boots',
-          label: "Skii Boots (+20 € / day)"
-        });
+      gears.push({
+          value: 'Skii',
+          label: 'Skii (+30 € / day)'
+      });
+      gears.push({
+        value: 'Skii_Boots',
+        label: "Skii Boots (+20 € / day)"
+      });
       if(currentGears.find((value) => (value === "Skii_Poles")) === undefined)
         gears.push({
           value: 'Skii_Poles',
           label: "Skii Poles (+5 € / day)",
         });
-    } else if (sport === "Snowboard") {
-      if(currentGears.find((value) => (value === "Snowboard")) === undefined)
-        gears.push({
-          value: 'Snowboard',
-            label: 'Snowboard (+50 € / day)'
-        });
-      if(currentGears.find((value) => (value === "Snowboard_Boots")) === undefined)
+    } else if(sport === "Snowboard") {
+      gears.push({
+        value: 'Snowboard',
+          label: 'Snowboard (+50 € / day)'
+      });
       gears.push({
         value: 'Snowboard_Boots',
           label: "Snowboard Boots (+10 € / day)"
