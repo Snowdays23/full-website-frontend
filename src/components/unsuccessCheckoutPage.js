@@ -43,8 +43,9 @@ export const UnsuccessCheckoutPage = () => {
                     <div className="w-100"></div>
 
                     <div className='col-8'>
-                        <h2 className='text-black font-josefin subtitle'>The payment was not successful. We ask you try it again!</h2>
+                        <h2 className='text-black font-josefin subtitle'>You stopped the payment process!</h2>
                         <h2 className='text-black font-josefin ' style={{fontSize: "15vw"}}><Cancel fontSize={"inherit"}/></h2>
+                        <h2 className='text-black font-josefin subtitle'>Please open the link from your email again and pay for your ticket :)</h2>
                     </div>
 
                     <Separator number={8} ></Separator>
