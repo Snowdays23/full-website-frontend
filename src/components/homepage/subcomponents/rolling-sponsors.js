@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/css/bootstrap-override.css";
-import "../../assets/css/style.css";
-import "../../assets/css/rolling-sponsors.css";
+import "../../../assets/css/bootstrap.min.css";
+import "../../../assets/css/bootstrap-override.css";
+import "../../../assets/css/style.css";
+import "../../../assets/css/rolling-sponsors.css";
 
 export default function SponsorsRoll({logos}) {
     const spawnLogo = logo => {

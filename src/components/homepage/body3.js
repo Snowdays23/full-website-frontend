@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import bgMountains from '../assets/img/mountains_illustration2.svg';
+import bgMountains from '../../assets/img/mountains_illustration2.svg';
 import LogosTable from './subcomponents/logos-table';
-import Bocconi from '../assets/img/participantsLogo/Bocconi.png';
-import ESB from '../assets/img/participantsLogo/ESB.png';
-import FS from '../assets/img/participantsLogo/Frankfurt_School.png';
-import Maastricht from '../assets/img/participantsLogo/Maastricht_University.png';
-import NOVA from '../assets/img/participantsLogo/NOVA.png';
-import TUM from '../assets/img/participantsLogo/TUM.png';
-import UNITN from '../assets/img/participantsLogo/UNITN.png';
-import WHU from '../assets/img/participantsLogo/WHU.png';
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/bootstrap-override.css";
-import "../assets/css/style.css";
-import "../assets/css/styleBody3.css";
-import Separator from './subcomponents/separator';
+import Bocconi from '../../assets/img/participantsLogo/Bocconi.png';
+import ESB from '../../assets/img/participantsLogo/ESB.png';
+import FS from '../../assets/img/participantsLogo/Frankfurt_School.png';
+import Maastricht from '../../assets/img/participantsLogo/Maastricht_University.png';
+import NOVA from '../../assets/img/participantsLogo/NOVA.png';
+import TUM from '../../assets/img/participantsLogo/TUM.png';
+import UNITN from '../../assets/img/participantsLogo/UNITN.png';
+import WHU from '../../assets/img/participantsLogo/WHU.png';
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/bootstrap-override.css";
+import "../../assets/css/style.css";
+import "../../assets/css/styleBody3.css";
+import Separator from '../subcomponents/separator';
 export default class Body3 extends Component {
 
 

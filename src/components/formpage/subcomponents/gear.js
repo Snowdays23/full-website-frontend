@@ -6,7 +6,7 @@ import "../../../assets/css/bootstrap.min.css";
 import "../../../assets/css/other-pages-css/styleFormPage.css";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
-export const Gear = ({id, value, currentGears, setCurrentGears}) => {
+export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
 
     const [gear, setGear] = React.useState(value);
 
@@ -18,32 +18,42 @@ export const Gear = ({id, value, currentGears, setCurrentGears}) => {
         setCurrentGears([...beforeCG, event.target.value, ...afterCG]);
     };
 
-    const gears = [
-        {
-          value: 'Snowboard',
-          label: 'Snowboard (+50 € / day)',
-        },
-        {
-          value: 'Snowboard_Boots',
-          label: "Snowboard Boots (+10 € / day)",
-        },
-        {
-          value: 'Skii',
-          label: 'Skii (+30 € / day)',
-        },
-        {
+    let gears = [];
+
+    if(currentGears.find((value) => (value === "Helmet")) === undefined)
+      gears.push({
+        value: 'Helmet',
+        label: "Helmet (+5 € / day)"
+      });
+
+    if(sport === "Skii") {
+      if(currentGears.find((value) => (value === "Skii")) === undefined)
+        gears.push({
+            value: 'Skii',
+            label: 'Skii (+30 € / day)'
+        });
+      if(currentGears.find((value) => (value === "Skii_Boots")) === undefined)
+        gears.push({
           value: 'Skii_Boots',
-          label: "Skii Boots (+20 € / day)",
-        },
-        {
+          label: "Skii Boots (+20 € / day)"
+        });
+      if(currentGears.find((value) => (value === "Skii_Poles")) === undefined)
+        gears.push({
           value: 'Skii_Poles',
           label: "Skii Poles (+5 € / day)",
-        },
-        {
-          value: 'Helmet',
-          label: "Helmet (+5 € / day)",
-        }
-      ];
+        });
+    } else if (sport === "Snowboard") {
+      if(currentGears.find((value) => (value === "Snowboard")) === undefined)
+        gears.push({
+          value: 'Snowboard',
+            label: 'Snowboard (+50 € / day)'
+        });
+      if(currentGears.find((value) => (value === "Snowboard_Boots")) === undefined)
+      gears.push({
+        value: 'Snowboard_Boots',
+          label: "Snowboard Boots (+10 € / day)"
+      });
+    }
     
     return (
         <div>

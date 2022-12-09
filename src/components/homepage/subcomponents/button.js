@@ -1,8 +1,8 @@
 import React, { Component, useNavigate } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/css/bootstrap-override.css";
-import "../../assets/css/style.css";
+import "../../../assets/css/bootstrap.min.css";
+import "../../../assets/css/bootstrap-override.css";
+import "../../../assets/css/style.css";
 
 function Button ({img, link}) {
 

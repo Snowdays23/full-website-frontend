@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import blueStars from '../assets/img/blue_stars.svg';
-import bgMountains from '../assets/img/mountains_illustration2.svg';
-import bgMountainsWEB from '../assets/img/mountains_illustration2WEB.svg';
-import Separator from './subcomponents/separator';
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/bootstrap-override.css";
-import "../assets/css/styleBody1.css";
-import "../assets/css/style.css";
+import blueStars from '../../assets/img/blue_stars.svg';
+import bgMountains from '../../assets/img/mountains_illustration2.svg';
+import bgMountainsWEB from '../../assets/img/mountains_illustration2WEB.svg';
+import Separator from '../subcomponents/separator';
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/bootstrap-override.css";
+import "../../assets/css/styleBody1.css";
+import "../../assets/css/style.css";
 
 export default class Body1 extends Component {
     render () {

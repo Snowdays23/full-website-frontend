@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import FlippingImageCard from './subcomponents/flipping-image-card';
-import whiteStars from '../assets/img/white_stars.svg';
-import Separator from './subcomponents/separator';
-import img1SnowVolley from '../assets/img/previousImg/sports/snowvolley.jpg';
-import img2Flag from '../assets/img/previousImg/sports/flag.jpg';
-import img3Snowboarder from '../assets/img/previousImg/sports/snowboarder.jpg';
-import img4Slope from '../assets/img/previousImg/sports/slope.jpg';
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/bootstrap-override.css";
-import "../assets/css/styleBody2.css";
-import "../assets/css/style.css";
+import Separator from '../subcomponents/separator';
+import img1SnowVolley from '../../assets/img/previousImg/sports/snowvolley.jpg';
+import img2Flag from '../../assets/img/previousImg/sports/flag.jpg';
+import img3Snowboarder from '../../assets/img/previousImg/sports/snowboarder.jpg';
+import img4Slope from '../../assets/img/previousImg/sports/slope.jpg';
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/bootstrap-override.css";
+import "../../assets/css/styleBody2.css";
+import "../../assets/css/style.css";
 
 export default class Body2 extends Component {
     render () {

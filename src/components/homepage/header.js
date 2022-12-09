@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import bgMountains from '../assets/img/mountains_illustration1.svg';
-import bgMountainsWEB from '../assets/img/mountains_illustration1WEB.svg';
-import logoSD23 from '../assets/img/Logo_SD_23.svg';
-import whiteStars from '../assets/img/white_stars.svg';
-import blueStars from '../assets/img/blue_stars.svg';
-import Separator from './subcomponents/separator';
-import saveTheDate from '../assets/img/saveTheDate.png';
-import saveTheDateWEB from '../assets/img/saveTheDateWEB.png';
-import "../assets/css/style.css";
-import "../assets/css/styleHeader.css";
-import "../assets/css/bootstrap.min.css";  
+import bgMountains from '../../assets/img/mountains_illustration1.svg';
+import bgMountainsWEB from '../../assets/img/mountains_illustration1WEB.svg';
+import logoSD23 from '../../assets/img/Logo_SD_23.svg';
+import whiteStars from '../../assets/img/white_stars.svg';
+import blueStars from '../../assets/img/blue_stars.svg';
+import Separator from '../subcomponents/separator';
+import "../../assets/css/style.css";
+import "../../assets/css/styleHeader.css";
+import "../../assets/css/bootstrap.min.css";  
 
 export default class Header extends Component {
     render () {

@@ -25,13 +25,6 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
     const [currentGears, setCurrentGears] = React.useState([""]);
 
-    // const addOneGear = () => {
-    //   setCurrentGears(...currentGears, "" );
-    // }
-
-    //I HAVE TO CREATE A SUBCOMP JUST DOR GEARS MENU
-
-
       const [size, setSize] = React.useState('');
 
     const handleChangeSize = (event) => {
@@ -63,16 +56,35 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
       const [sport, setSport] = React.useState();
 
+      const [maxGears, setMaxGears] = React.useState(1);
+
       const handleChangeSport = (event) => {
         setSport(event.target.value);
         if(event.target.value === "Skii" || event.target.value === "Snowboard") {
           setWantSkii(true)
           setNeedRent(false)
+          if(event.target.value === "Skii")
+            setMaxGears(4);
+          else {
+            if(currentGears.length > 3)
+                setCurrentGears(currentGears.slice(0, currentGears.length-1))
+            setMaxGears(3);
+          }
         }
         else {
           setWantSkii(false)
           setNeedRent(false)
         }
+      }
+
+      const handleAddGear = () => {
+        if(currentGears.length < maxGears)
+          setCurrentGears([...currentGears, ""])
+        }
+
+      const handleRemoveGear = () => {
+        if(currentGears.length > 1)
+          setCurrentGears(currentGears.slice(0, currentGears.length-1))
       }
 
       const sports = [
@@ -210,9 +222,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <Separator number = {2} />
 
-                {/* <Gear/> */}
-
-                {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} currentGears={currentGears} setCurrentGears={setCurrentGears}/> <Separator number = {2} /> </div>)}
+                {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} currentGears={currentGears} setCurrentGears={setCurrentGears} sport={sport}/> <Separator number = {2} /> </div>)}
 
                 <div className='row justify-content-center'>
                     <Separator number = {2} />
@@ -226,12 +236,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
                         }}
                         size="large"
                         variant="contained"
-                        onClick={
-                          () => {
-                            if(currentGears.length > 1)
-                              setCurrentGears(currentGears.slice(0, currentGears.length-1))
-                          }
-                        }
+                        onClick={handleRemoveGear}
                         ><DeleteForever/> <label className='d-none d-md-block ' style={{marginTop: 8}}>
                           &nbsp;&nbsp; Remove Gear </label></Button>      
 
@@ -250,9 +255,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
                       }}
                       size="large"
                       variant="contained"
-                      onClick={() => {
-                        if(currentGears.length < 5)
-                          setCurrentGears([...currentGears, ""])}}
+                      onClick={handleAddGear}
                       ><AddCircle/> <label className='d-none d-md-block ' style={{marginTop: 8}}>
                       &nbsp;&nbsp; Add Gear </label></Button>      
                     </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/css/bootstrap-override.css";
-import "../../assets/css/images-carousel.css";
+import "../../../assets/css/bootstrap.min.css";
+import "../../../assets/css/bootstrap-override.css";
+import "../../../assets/css/images-carousel.css";
 
 export default function ImagesCarousel({images, intervalMs=1000}) {
     const [imageIndex, setImageIndex] = useState(0);

@@ -1,17 +1,15 @@
 import logo from '../logo.svg';
 import '../App.css';
-import Header from './header'
-import Body1 from './body1'
-import Body2 from './body2'
-import Body3 from './body3'
-import Body4 from './body4';
-import Body5 from './body5';
+import Header from './homepage/header'
+import Body1 from './homepage/body1'
+import Body2 from './homepage/body2'
+import Body3 from './homepage/body3'
+import Body4 from './homepage/body4';
+import Body5 from './homepage/body5';
 import Separator from './subcomponents/separator';
 import bg from "../assets/img/real-mountains.png";
 import bgWEB from '../assets/img/real-mountainsWEB.png';
 import Snowfall from 'react-snowfall';
-import {useState, getWindowSize, useEffect} from 'react';
-import { FormPage } from './other-pages/formPage';
 
 export const HomePage = () => {
 

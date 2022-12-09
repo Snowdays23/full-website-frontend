@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/css/bootstrap-override.css";
-import "../../assets/css/flipping-image-card.css";
-import "../../assets/css/style.css";
+import "../../../assets/css/bootstrap.min.css";
+import "../../../assets/css/bootstrap-override.css";
+import "../../../assets/css/flipping-image-card.css";
+import "../../../assets/css/style.css";
 import ReactCardFlip from 'react-card-flip';
 
 export default function FlippingImageCard({imgFront, imgBack, textFront, textBack}) {

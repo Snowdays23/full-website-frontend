@@ -1,25 +1,18 @@
 import * as React from 'react';
-import Separator from '../subcomponents/separator';
-import logoSD23 from '../../assets/img/Logo_SD_23.svg';
-import "../../assets/css/style.css";
-import "../../assets/css/bootstrap.min.css";  
-import "../../assets/css/other-pages-css/styleFormPage.css";
+import Separator from './subcomponents/separator';
+import logoSD23 from '../assets/img/Logo_SD_23.svg';
+import "../assets/css/style.css";
+import "../assets/css/bootstrap.min.css";  
+import "../assets/css/other-pages-css/styleFormPage.css";
 import Snowfall from 'react-snowfall';
-import TextField from '@mui/material/TextField';
-import { Checkbox } from '@mui/material/';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import dayjs, { Dayjs } from 'dayjs';
-import MenuItem from '@mui/material/MenuItem';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { FormPageSport } from './formPageSport';
-import { FormPageCatering } from './formPageCatering';
+import { FormPageSport } from './formpage/formPageSport';
+import { FormPageCatering } from './formpage/formPageCatering';
 import Button from '@mui/material/Button';
 import Send from '@mui/icons-material/Send';
-import { FormPageGeneral } from './formPageGeneral';
-import { CheckBox } from '@mui/icons-material';
-import PrivacyPolicy from '../../assets/docs/terms__cond.pdf';
+import { FormPageGeneral } from './formpage/formPageGeneral';
+import PrivacyPolicy from '../assets/docs/terms__cond.pdf';
+import { Checkbox } from '@mui/material';
 
 export const FormPage = () => {
 

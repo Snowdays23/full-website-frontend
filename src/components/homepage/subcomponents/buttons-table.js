@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Button from './button';
-import "../../assets/css/bootstrap.min.css";
-import "../../assets/css/bootstrap-override.css";
-import "../../assets/css/style.css";
+import "../../../assets/css/bootstrap.min.css";
+import "../../../assets/css/bootstrap-override.css";
+import "../../../assets/css/style.css";
 
 function ButtonsTable ({buttons, links}) {
 

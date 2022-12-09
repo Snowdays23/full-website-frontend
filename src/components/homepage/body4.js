@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
-import bgMountains2 from '../assets/img/mountains_illustration2_white.svg';
-import alpenstoff from "../assets/img/sponsorsLogo/Alpenstoff.png";
-import clipper from "../assets/img/sponsorsLogo/clipper.png";
-import fischer from "../assets/img/sponsorsLogo/Fischer.png";
-import loacker from "../assets/img/sponsorsLogo/loacker.png";
-import marlene from "../assets/img/sponsorsLogo/Marlene.png";
-import pompadour from "../assets/img/sponsorsLogo/Pompadour.png";
-import redBull from "../assets/img/sponsorsLogo/Red-Bull.png";
-import salewa from "../assets/img/sponsorsLogo/Salewa.png";
-import "../assets/css/bootstrap.min.css";
-import "../assets/css/bootstrap-override.css";
-import "../assets/css/style.css";
-import "../assets/css/styleBody4.css";
-import img1Redbull from "../assets/img/previousImg/sponsors/redbull.jpg";
-import img2Marlene from "../assets/img/previousImg/sponsors/marlene.jpg";
-import img3Redbull from "../assets/img/previousImg/sponsors/redbull1.jpg";
-import img4Flixbus from "../assets/img/previousImg/sponsors/flixbus.jpg";
-import img5Alpenstoff from "../assets/img/previousImg/sponsors/alpenstoff.jpg";
-import img6Clipper from "../assets/img/previousImg/sponsors/clipper.jpg";
+import bgMountains2 from '../../assets/img/mountains_illustration2_white.svg';
+import alpenstoff from "../../assets/img/sponsorsLogo/Alpenstoff.png";
+import clipper from "../../assets/img/sponsorsLogo/clipper.png";
+import fischer from "../../assets/img/sponsorsLogo/Fischer.png";
+import loacker from "../../assets/img/sponsorsLogo/loacker.png";
+import marlene from "../../assets/img/sponsorsLogo/Marlene.png";
+import pompadour from "../../assets/img/sponsorsLogo/Pompadour.png";
+import redBull from "../../assets/img/sponsorsLogo/Red-Bull.png";
+import salewa from "../../assets/img/sponsorsLogo/Salewa.png";
+import "../../assets/css/bootstrap.min.css";
+import "../../assets/css/bootstrap-override.css";
+import "../../assets/css/style.css";
+import "../../assets/css/styleBody4.css";
+import img1Redbull from "../../assets/img/previousImg/sponsors/redbull.jpg";
+import img2Marlene from "../../assets/img/previousImg/sponsors/marlene.jpg";
+import img3Redbull from "../../assets/img/previousImg/sponsors/redbull1.jpg";
+import img4Flixbus from "../../assets/img/previousImg/sponsors/flixbus.jpg";
+import img5Alpenstoff from "../../assets/img/previousImg/sponsors/alpenstoff.jpg";
+import img6Clipper from "../../assets/img/previousImg/sponsors/clipper.jpg";
 import SponsorsRoll from './subcomponents/rolling-sponsors';
 import ImagesCarousel from './subcomponents/images-carousel';
-import Separator from './subcomponents/separator';
+import Separator from '../subcomponents/separator';
 
 export default class Body4 extends Component {
 
