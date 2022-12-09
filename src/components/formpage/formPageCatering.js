@@ -30,6 +30,7 @@ export const FormPageCatering = ({setCateringData}) => {
     const invertVegetarian = () => setVegetarian(!vegetarian); 
 
     const [gluten, setGluten] = React.useState(false);
+    const [lactose, setLactose] = React.useState(false);
 
     const [notes, setNotes] = React.useState('')
 
@@ -39,11 +40,11 @@ export const FormPageCatering = ({setCateringData}) => {
                 gluten_free: gluten,
                 vegetarian: vegetarian,
                 vegan: vegan,
-                lactose_free: false // TODO: change when selector is available
+                lactose_free: lactose
             },
             additional_notes: notes
         });
-    }, [gluten, vegetarian, vegan, notes]);
+    }, [gluten, vegetarian, vegan, notes, lactose]);
     
     return (
         <div>
@@ -52,7 +53,7 @@ export const FormPageCatering = ({setCateringData}) => {
                         <Separator number={7} ></Separator>
                 </div>
                     <div className='col-12'>
-                        <h2 className='text-white font-josefin subtitle'>Nutrition Information</h2>
+                        <h2 className='text-white font-josefin subtitle'>Nutritional Information</h2>
                     </div>
                     <Separator number={2} />
                 </div>
@@ -84,6 +85,16 @@ export const FormPageCatering = ({setCateringData}) => {
                 <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
                     <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
                         <label> Gluten Free <Checkbox onClick ={ () => setGluten(!gluten)}  /></label>
+                    </div>
+                </div>
+
+                <div className='d-block d-lg-none'>
+                    <Separator number = {2}  />
+                </div>
+
+                <div className='col-12 col-sm-7 col-lg-5' style={{position: "relative", right: -20 }}>
+                    <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
+                        <label> Lactose Intolerant <Checkbox onClick ={ () => setLactose(!lactose)}  /></label>
                     </div>
                 </div>
 
