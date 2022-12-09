@@ -153,13 +153,9 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
                       </div>
                       <Separator number={2} />
                     </div>
-                    {/* <div className='col-12 col-lg-5' style={{position: "relative", right: -20 }}>
-                        <div style={{backgroundColor: "white", height: '100%', width: '88%', paddingTop: 10}}>
-                            <label><DownhillSkiing style={{marginBottom: 5, marginRight: 5}} /> Want to ski / snowboard <Checkbox onClick={() => invertWantSkii()} /></label>
-                        </div>
-                    </div> */}
                     <div className='col-12 col-sm-12 col-lg-11' style={{position: "relative"}} >
                         <TextField
+                            required
                         id="filled-select-sport"
                         select
                         label="Sport"
@@ -191,11 +187,11 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" onChange = {(val) => setHeight(val.target.value)} label="Height" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField required id="filled-basic" onChange = {(val) => setHeight(val.target.value)} label="Height" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField id="filled-basic" onChange = {(val) => setWeight(val.target.value)} label="Weight" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField required id="filled-basic" onChange = {(val) => setWeight(val.target.value)} label="Weight" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                 </div> 
 
@@ -203,11 +199,12 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" onChange = {(val) => setShoeSize(val.target.value)} label="Shoe Size" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
+                        <TextField required id="filled-basic" onChange = {(val) => setShoeSize(val.target.value)} label="Shoe Size" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
                         <TextField
+                        required
                         id="filled-select-helmet-size"
                         select
                         label="Helmet Size"
@@ -244,12 +241,6 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
                         onClick={handleRemoveGear}
                         ><DeleteForever/> <label className='d-none d-md-block ' style={{marginTop: 8}}>
                           &nbsp;&nbsp; Remove Gear </label></Button>      
-
-                    {/* <div className='d-xs-block d-lg-none'>
-                      <div className='w-100'>
-                      <Separator number={2} ></Separator>
-                      </div>
-                    </div> */}
 
                       <Button 
                       style={{

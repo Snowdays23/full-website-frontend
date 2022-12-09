@@ -32,7 +32,14 @@ export const FormPage = () => {
     });
 
       
-    const [read, setRead] = React.useState(false);
+    const [readPrivacy, setReadPrivacy] = React.useState(false);
+    const [readTerms, setReadTerms] = React.useState(false);
+    const [readPayment, setReadPayment] = React.useState(false);
+
+    const [openPrivacy, setOpenPrivacy] = React.useState(false);
+    const [openTerms, setOpenTerms] = React.useState(false);
+    const [openPayment, setOpenPayment] = React.useState(false);
+
     const [filledGeneral, setFilledGeneral] = React.useState(false);
     const [filledSport, setFilledSport] = React.useState(false);
 
@@ -58,11 +65,11 @@ export const FormPage = () => {
     };
       
     React.useEffect(() => {
-        if(read && filledGeneral && filledSport)
+        if(readPrivacy && readTerms && readPayment && filledGeneral && filledSport)
             setFilled(true);
         else
             setFilled(false);
-    }, [read, filledGeneral, filledSport]);
+    }, [readPrivacy, readTerms, readPayment, filledGeneral, filledSport]);
     
     
     return (
@@ -129,9 +136,43 @@ export const FormPage = () => {
 
                                 <div className="row justify-content-center">
 
+                                    <div className='col-11 col-lg-10' >
+                                        <label className='normal-text text-white'> Open the following documents in order to accept them.</label>
+                                    </div>
+
+                                    <div className='w-100 mt-2'></div>
+
                                     <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
-                                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
-                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Privacy Policy</a> <Checkbox checked={read} onClick={() => {setRead(!read)}} /> </label>
+                                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10, paddingLeft: 2, paddingRight: 2}}>
+                                            {openPrivacy ? 
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Privacy Policy</a> * <Checkbox checked={readPrivacy} onClick={() => {setReadPrivacy(!readPrivacy)}} /> </label>
+                                            :
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank" onClick={() => {setOpenPrivacy(true)}} > Privacy Policy</a> * <Checkbox disabled checked={false}/> </label>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className='w-100 mt-2'></div>
+
+                                    <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10, paddingLeft: 2, paddingRight: 2}}>
+                                        {openTerms ? 
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Terms & Conditions</a> * <Checkbox checked={readTerms} onClick={() => {setReadTerms(!readTerms)}} /> </label>
+                                            :
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank" onClick={() => {setOpenTerms(true)}}> Terms & Conditions</a> * <Checkbox disabled checked={false} /> </label>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div className='w-100 mt-2'></div>
+
+                                    <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                                        <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10, paddingLeft: 2, paddingRight: 2}}>
+                                            {openPayment ? 
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Payment Policy</a> * <Checkbox checked={readPayment} onClick={() => {setReadPayment(!readPayment)}} /> </label>
+                                            :
+                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank" onClick={() => {setOpenPayment(true)}}> Payment Policy</a> * <Checkbox disabled checked={false} /> </label>
+                                            }
                                         </div>
                                     </div>
 
@@ -147,7 +188,8 @@ export const FormPage = () => {
                                     style={{
                                         borderRadius: 30,
                                         backgroundColor: "#fff",
-                                        color: "#000"
+                                        color: "#000",
+                                        padding: "20px 45px 20px 45px"
                                     }}
                                     size="large"
                                     variant="contained"

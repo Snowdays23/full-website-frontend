@@ -53,6 +53,7 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
             <div className='row justify-content-center'>
                 <div className='col-12 col-sm-12 col-lg-11' style={{position: "relative"}} >
                     <TextField
+                    required
                     id="filled-select-gear"
                     select
                     label={"Gear " + id}

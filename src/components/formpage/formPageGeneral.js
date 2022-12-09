@@ -149,23 +149,23 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
                   
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setLastName(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setLastName(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
                        <LocalizationProvider dateAdapter={AdapterDayjs } >
                             <DesktopDatePicker
-                            label="Date Birth"
+                            label="Date Birth *"
                             inputFormat="DD/MM/YYYY"
                             value={value}
                             onChange={handleChange}
@@ -178,7 +178,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} onChange = {(val) => setStudnr(val.target.value)} />
+                        <TextField 
+                            required id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} onChange = {(val) => setStudnr(val.target.value)} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
@@ -190,6 +191,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         onChange={handleChangeGender}
                         variant="filled"
                         style={{width:'90%'}}
+                        required
                         >
                             {genders.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
@@ -203,6 +205,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
                 <div className='col-6 col-lg-5' style={{position: "relative", right: -13}} >
                         <TextField
+                            required
                         id="filled-select-gender"
                         select
                         label="University"
@@ -220,7 +223,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
-                        <TextField id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
