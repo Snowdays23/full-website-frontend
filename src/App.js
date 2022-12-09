@@ -5,6 +5,7 @@ import {HomePage} from './components/homePage';
 import { Route, Routes } from "react-router-dom";
 import { SuccessCheckoutPage } from './components/successCheckoutPage';
 import { UnsuccessCheckoutPage } from './components/unsuccessCheckoutPage';
+import { NotFoundPage } from './components/notFoundPage';
 
 export default function App ()  {
 
@@ -17,6 +18,7 @@ export default function App ()  {
           <Route path="/externals/form" element={<FormPage/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
             
       </div>
