@@ -112,7 +112,12 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
             weight: weight || null,
             shoe_size: shoeSize || null,
             helmet_size: size || null,
-            rented_gear: currentGears.map(g => ({ name: g }))
+            rented_gear: currentGears.flatMap(g => {
+              if (g && g !== "") {
+                return [{name: g}];
+              }
+              return [];
+            })
           });
         } else {
           setFilledSport(false);
