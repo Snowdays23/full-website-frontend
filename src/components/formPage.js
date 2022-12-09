@@ -137,7 +137,7 @@ export const FormPage = () => {
                                 <div className="row justify-content-center">
 
                                     <div className='col-11 col-lg-10' >
-                                        <label className='normal-text text-white'> Open the following documents in order to accept them.</label>
+                                        <label className='small-text text-white font-poppins'> Open the following documents in order to accept them.</label>
                                     </div>
 
                                     <div className='w-100 mt-2'></div>
