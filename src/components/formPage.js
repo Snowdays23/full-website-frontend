@@ -63,7 +63,12 @@ export const FormPage = () => {
             body: JSON.stringify({
                 ...generalData,
                 ...sportData,
-                ...cateringData
+                ...cateringData,
+                policies: {
+                    privacy: openPrivacy && readPrivacy,
+                    terms: openTerms && readTerms,
+                    payment: openPayment && readPayment
+                }
             })
         })).json();
     };
