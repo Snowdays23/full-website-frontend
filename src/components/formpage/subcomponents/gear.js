@@ -25,7 +25,7 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
 
     if(sport === "Skii") {
       gears.push({
-          value: 'skii',
+          value: 'ski',
           label: 'Skii (+30 € / day)'
       });
       gears.push({
