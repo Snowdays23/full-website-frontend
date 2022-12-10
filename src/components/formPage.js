@@ -55,22 +55,33 @@ export const FormPage = () => {
 
 
     const submitForm = async evt => {
-        return await (await fetch("/api/participants", {
-            method: "POST",
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify({
-                ...generalData,
-                ...sportData,
-                ...cateringData,
-                policies: {
-                    privacy: openPrivacy && readPrivacy,
-                    terms: openTerms && readTerms,
-                    payment: openPayment && readPayment
-                }
-            })
-        })).json();
+
+        let result = "";
+        
+        try {
+            result = await (await fetch("/api/participants", {
+                method: "POST",
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify({
+                    ...generalData,
+                    ...sportData,
+                    ...cateringData,
+                    policies: {
+                        privacy: openPrivacy && readPrivacy,
+                        terms: openTerms && readTerms,
+                        payment: openPayment && readPayment
+                    }
+                })
+            })).json();
+
+            setError();
+        } catch (jsonError) {
+            setError(jsonError[0]);
+        }
+
+        return result;
     };
       
     React.useEffect(() => {
@@ -78,6 +89,7 @@ export const FormPage = () => {
             setFilled(true);
         else
             setFilled(false);
+
     }, [readPrivacy, readTerms, readPayment, filledGeneral, filledSport]);
     
     
