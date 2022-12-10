@@ -19,31 +19,31 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
     };
 
     let gears = [{
-      value: 'Helmet',
+      value: 'helmet',
       label: "Helmet (+5 € / day)"
     }];
 
     if(sport === "Skii") {
       gears.push({
-          value: 'Skii',
+          value: 'skii',
           label: 'Skii (+30 € / day)'
       });
       gears.push({
-        value: 'Skii_Boots',
+        value: 'skiboots',
         label: "Skii Boots (+20 € / day)"
       });
       if(currentGears.find((value) => (value === "Skii_Poles")) === undefined)
         gears.push({
-          value: 'Skii_Poles',
+          value: 'poles',
           label: "Skii Poles (+5 € / day)",
         });
     } else if(sport === "Snowboard") {
       gears.push({
-        value: 'Snowboard',
-          label: 'Snowboard (+50 € / day)'
+        value: 'snowboard',
+        label: 'Snowboard (+50 € / day)'
       });
       gears.push({
-        value: 'Snowboard_Boots',
+        value: 'snowboardboots',
           label: "Snowboard Boots (+10 € / day)"
       });
     }
