@@ -13,7 +13,7 @@ export const UnsuccessCheckoutPage = () => {
 
         <div className = "wrapper-outside  ">
             
-            <div className='absolute overlay-1' style={{width: "100vw", height: "auto"}} >
+            <div className='absolute overlay-1' style={{width: "100vw", minHeight: "100vh", height: "auto"}} >
 
                 <div className='d-xs-block d-lg-none'>
                     <Snowfall  snowflakeCount={80}/>    

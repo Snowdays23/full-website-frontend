@@ -5,6 +5,7 @@ import "../assets/css/style.css";
 import "../assets/css/bootstrap.min.css";  
 import Snowfall from 'react-snowfall';
 import { SevereCold } from '@mui/icons-material';
+import Yeti from '../assets/img/yeti_illustration.svg';
 
 export const NotFoundPage = () => {
     
@@ -13,7 +14,7 @@ export const NotFoundPage = () => {
 
         <div className = "wrapper-outside  ">
             
-            <div className='absolute overlay-1' style={{width: "100vw", height: "auto"}} >
+            <div className='absolute overlay-1' style={{width: "100vw", minHeight: "100vh", height: "auto"}} >
 
                 <div className='d-xs-block d-lg-none'>
                     <Snowfall  snowflakeCount={80}/>    
@@ -44,7 +45,12 @@ export const NotFoundPage = () => {
 
                     <div className='col-8'>
                         <h2 className='text-black font-josefin subtitle'>The Yeti couldn't find any page for this request!</h2>
-                        <h2 className='text-black font-josefin ' style={{fontSize: "15vw"}}><SevereCold fontSize={"inherit"}/></h2>
+                    </div>
+
+                    <div className='w-100'></div>
+
+                    <div className='col-10 '>
+                        <img src={Yeti}  id = "main-logo"  style={{width:"20vw", height: "auto"}} alt="Yeti"/>
                     </div>
 
                     <Separator number={8} ></Separator>
