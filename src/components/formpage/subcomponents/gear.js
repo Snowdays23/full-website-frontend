@@ -32,7 +32,7 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
         value: 'skiboots',
         label: "Skii Boots (+20 € / day)"
       });
-      if(currentGears.find((value) => (value === "Skii_Poles")) === undefined)
+      if(currentGears.find((value) => (value === "poles")) === undefined)
         gears.push({
           value: 'poles',
           label: "Skii Poles (+5 € / day)",
