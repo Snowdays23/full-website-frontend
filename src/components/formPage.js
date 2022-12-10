@@ -13,6 +13,8 @@ import Send from '@mui/icons-material/Send';
 import { FormPageGeneral } from './formpage/formPageGeneral';
 import PrivacyPolicy from '../assets/docs/terms__cond.pdf';
 import { Checkbox } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 export const FormPage = () => {
 
@@ -48,6 +50,8 @@ export const FormPage = () => {
     const [cateringData, setCateringData] = React.useState({});
       
     const [filled, setFilled] = React.useState(false);
+
+    const [error, setError] = React.useState();
 
 
     const submitForm = async evt => {
@@ -109,7 +113,18 @@ export const FormPage = () => {
                         <h2 className='text-black font-josefin subtitle'>fill in your details</h2>
                     </div>
 
-                    <Separator number={8} ></Separator>
+                    <Separator number={3} ></Separator>
+                    <div className="w-100"></div>
+                    
+
+                    {error ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
+                        <Alert severity="error">
+                            <AlertTitle>Error</AlertTitle> {error} — <strong>check it out!</strong>
+                        </Alert>
+                    </div> : <br/>}
+
+                    <Separator number={3} ></Separator>
+                    <div className="w-100"></div>
 
                     <ThemeProvider theme={theme} >
 
