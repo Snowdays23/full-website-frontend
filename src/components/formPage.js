@@ -242,7 +242,7 @@ export const FormPage = () => {
                                                         if (fname ===  "non_field_errors") {
                                                             return [];
                                                         }
-                                                        return errors.map(e => `${name}: ${e}`);
+                                                        return errors.map(e => `${fname}: ${e}`);
                                                     }), ...non_field]));
                                                 });
                                             }
