@@ -228,7 +228,13 @@ export const FormPage = () => {
                                     onClick={() => {
                                         submitForm().then(res => {
 
-                                            setConfirm(true);
+                                            if(res) {
+                                                setError(res[0]);
+                                                setConfirm(false);
+                                            } else {
+                                                setConfirm(true);
+                                                setError();
+                                            }
 
                                         }).catch(err => {
 
