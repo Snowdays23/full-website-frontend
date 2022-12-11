@@ -37,11 +37,13 @@ export default class Body1 extends Component {
 
                         <div className='col-lg-8 col-12 row justify-content-center'> 
 
-                            <iframe id= "yt-video"
+                            {/* <iframe id= "yt-video"
                             src="https://www.youtube.com/embed/68TUBKxxVug?autoplay=1&mute=1"
                             title="YouTube video player" frameBorder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowFullScreen></iframe>
+                            allowFullScreen></iframe> */}
+
+                            <iframe id= "yt-video" src="https://www.youtube.com/embed/68TUBKxxVug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                         </div>
 
