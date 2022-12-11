@@ -37,7 +37,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       setUniversity(event.target.value);
     };
     
-    const [needsAccomodation, setNeedsAccomodation] = React.useState(false);
+    const [needsAccomodation, setNeedsAccomodation] = React.useState(true);
 
     const handleChangeNeedsAccomodation = (event) => {
       setNeedsAccomodation(event.target.checked);
