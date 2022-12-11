@@ -52,7 +52,7 @@ export const FormPage = () => {
     const [filled, setFilled] = React.useState(false);
 
     const [error, setError] = React.useState();
-    const [confirm, setConfirm] = React.useState(true);
+    const [confirm, setConfirm] = React.useState(false);
 
 
     const submitForm = async evt => {
