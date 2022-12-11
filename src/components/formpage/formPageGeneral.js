@@ -36,6 +36,12 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const handleChangeUniversity = (event) => {
       setUniversity(event.target.value);
     };
+    
+    const [needsAccomodation, setNeedsAccomodation] = React.useState(false);
+
+    const handleChangeNeedsAccomodation = (event) => {
+      setNeedsAccomodation(event.target.checked);
+    }
 
     const [name, setName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
@@ -57,7 +63,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           student_nr: studnr,
           phone: phonenr,
           university: university,
-          gender: gender
+          gender: gender,
+          needsAccomodation: needsAccomodation
         });
       }
       else {
@@ -230,7 +237,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
                     <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
-                            <label><Home style={{marginBottom: 5, marginRight: 5}} /> Need Accomodation <Checkbox defaultChecked /></label>
+                            <label><Home style={{marginBottom: 5, marginRight: 5}} /> Need Accomodation <Checkbox defaultChecked onChange={handleChangeNeedsAccomodation} /></label>
                         </div>
                     </div>
                 </div>
