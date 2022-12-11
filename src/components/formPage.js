@@ -235,15 +235,15 @@ export const FormPage = () => {
                                             } else {
                                                 setConfirm(false);
                                                 res.json().then(json => {
-                                                    non_field = json.non_field_errors;
-                                                    setError("\n".join(Object.entries(json).flatMap(field => {
+                                                    const non_field = json.non_field_errors;
+                                                    setError("\n".join([...Object.entries(json).flatMap(field => {
                                                         const fname = field[0];
                                                         const errors = field[1];
                                                         if (fname ===  "non_field_errors") {
                                                             return [];
                                                         }
                                                         return errors.map(e => `${name}: ${e}`);
-                                                    })));
+                                                    }), ...non_field]));
                                                 });
                                             }
                                         }).catch(err => {
