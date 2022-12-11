@@ -188,11 +188,11 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" onChange = {(val) => setHeight(val.target.value)} label="Height" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField required id="filled-basic" onChange = {(val) => setHeight(val.target.value)} label="Height (cm)" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField required id="filled-basic" onChange = {(val) => setWeight(val.target.value)} label="Weight" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
+                        <TextField required id="filled-basic" onChange = {(val) => setWeight(val.target.value)} label="Weight (kg)" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} />
                     </div>
                 </div> 
 
@@ -200,7 +200,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" onChange = {(val) => setShoeSize(val.target.value)} label="Shoe Size" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
+                        <TextField required id="filled-basic" onChange = {(val) => setShoeSize(val.target.value)} label="Shoe Size (EU)" variant="filled" style={{width:'90%'}} type="number" InputLabelProps={{ shrink: true }} inputProps={{ inputMode: 'numeric',  pattern: "d*",  min: 0}} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >

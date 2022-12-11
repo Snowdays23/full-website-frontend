@@ -244,7 +244,7 @@ export const FormPage = () => {
                                         }).catch(err => {
 
                                             setError(Object.keys(err)[0]);
-                                            console.log(Object.keys(res)[0]);
+                                            console.log(Object.keys(err)[0]);
                                             setConfirm(false);
 
                                         });

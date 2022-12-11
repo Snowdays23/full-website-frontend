@@ -20,30 +20,30 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
 
     let gears = [{
       value: 'helmet',
-      label: "Helmet (+5 € / day)"
+      label: "Helmet"
     }];
 
     if(sport === "ski") {
       gears.push({
           value: 'ski',
-          label: 'Skii (+30 € / day)'
+          label: 'Skii'
       });
       gears.push({
         value: 'skiboots',
-        label: "Skii Boots (+20 € / day)"
+        label: "Skii Boots"
       });
       gears.push({
         value: 'poles',
-        label: "Skii Poles (+5 € / day)",
+        label: "Skii Poles",
       });
     } else if(sport === "snowboard") {
       gears.push({
         value: 'snowboard',
-        label: 'Snowboard (+50 € / day)'
+        label: 'Snowboard'
       });
       gears.push({
         value: 'snowboardboots',
-          label: "Snowboard Boots (+10 € / day)"
+          label: "Snowboard Boots"
       });
     }
     
