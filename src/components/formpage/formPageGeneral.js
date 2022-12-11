@@ -172,7 +172,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
                        <LocalizationProvider dateAdapter={AdapterDayjs } >
                             <DesktopDatePicker
-                            label="Date Birth *"
+                            label="Date of Birth *"
                             inputFormat="DD/MM/YYYY"
                             value={value}
                             onChange={handleChange}

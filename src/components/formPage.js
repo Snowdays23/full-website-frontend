@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Send from '@mui/icons-material/Send';
 import { FormPageGeneral } from './formpage/formPageGeneral';
 import PrivacyPolicy from '../assets/docs/terms__cond.pdf';
+import PaymentPolicy from '../assets/docs/PaymentPolicy.pdf';
+import TermsAndConditions from '../assets/docs/TermsAndConditions.pdf';
 import { Checkbox } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -189,9 +191,9 @@ export const FormPage = () => {
                                     <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
                                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10, paddingLeft: 2, paddingRight: 2}}>
                                         {openTerms ? 
-                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Terms & Conditions</a> * <Checkbox checked={readTerms} onClick={() => {setReadTerms(!readTerms)}} /> </label>
+                                            <label> I have read and I accept the <a href={TermsAndConditions} target="_blank"> Terms & Conditions</a> * <Checkbox checked={readTerms} onClick={() => {setReadTerms(!readTerms)}} /> </label>
                                             :
-                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank" onClick={() => {setOpenTerms(true)}}> Terms & Conditions</a> * <Checkbox disabled checked={false} /> </label>
+                                            <label> I have read and I accept the <a href={TermsAndConditions} target="_blank" onClick={() => {setOpenTerms(true)}}> Terms & Conditions</a> * <Checkbox disabled checked={false} /> </label>
                                             }
                                         </div>
                                     </div>
@@ -201,9 +203,9 @@ export const FormPage = () => {
                                     <div className='col-11 col-lg-10' style={{position: "relative", right: 0 }}>
                                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10, paddingLeft: 2, paddingRight: 2}}>
                                             {openPayment ? 
-                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank"> Payment Policy</a> * <Checkbox checked={readPayment} onClick={() => {setReadPayment(!readPayment)}} /> </label>
+                                            <label> I have read and I accept the <a href={PaymentPolicy} target="_blank"> Payment Policy</a> * <Checkbox checked={readPayment} onClick={() => {setReadPayment(!readPayment)}} /> </label>
                                             :
-                                            <label> I have read and I accept the <a href={PrivacyPolicy} target="_blank" onClick={() => {setOpenPayment(true)}}> Payment Policy</a> * <Checkbox disabled checked={false} /> </label>
+                                            <label> I have read and I accept the <a href={PaymentPolicy} target="_blank" onClick={() => {setOpenPayment(true)}}> Payment Policy</a> * <Checkbox disabled checked={false} /> </label>
                                             }
                                         </div>
                                     </div>
