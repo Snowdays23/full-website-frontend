@@ -52,14 +52,12 @@ export const FormPage = () => {
     const [filled, setFilled] = React.useState(false);
 
     const [error, setError] = React.useState();
+    const [confirm, setConfirm] = React.useState(true);
 
 
     const submitForm = async evt => {
 
-        let result = "";
-        
-        try {
-            result = await (await fetch("/api/participants", {
+        return await (await fetch("/api/participants", {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"
@@ -76,12 +74,6 @@ export const FormPage = () => {
                 })
             })).json();
 
-            setError();
-        } catch (jsonError) {
-            setError(jsonError[0]);
-        }
-
-        return result;
     };
       
     React.useEffect(() => {
@@ -97,7 +89,7 @@ export const FormPage = () => {
 
         <div className = "wrapper-outside  ">
             
-            <div className='absolute overlay-1' >
+            <div className='absolute overlay-1' style={{width: "100vw", minHeight: "100vh", height: "auto"}} >
 
                 <div className='d-xs-block d-lg-none'>
                     <Snowfall  snowflakeCount={80}/>    
@@ -140,9 +132,17 @@ export const FormPage = () => {
                         </Alert>
                     </div> : <br/>}
 
+                    
+
                     <Separator number={3} ></Separator>
                     <div className="w-100"></div>
-
+                    
+                    {confirm  && !error ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
+                        <Alert severity="success">
+                            <AlertTitle>Success</AlertTitle>
+                            The form has been submitted successfully! <strong>You will soon receive an email</strong>
+                        </Alert>
+                    </div> : 
                     <ThemeProvider theme={theme} >
 
                         <div className='col-11 col-lg-8 '>
@@ -228,7 +228,13 @@ export const FormPage = () => {
                                     onClick={() => {
                                         submitForm().then(res => {
 
+                                            setConfirm(true);
+
                                         }).catch(err => {
+
+                                            // console.log(err);
+                                            setError(err[0]);
+                                            setConfirm(false);
 
                                         });
                                     }}>Submit <Send fontSize={"inherit"} style={{marginLeft: 5}}/></Button>  
@@ -248,7 +254,7 @@ export const FormPage = () => {
                                 </div>
                             </div>
                         </div>
-                    </ThemeProvider>
+                    </ThemeProvider>}
 
                     <Separator number={8} ></Separator>
 
