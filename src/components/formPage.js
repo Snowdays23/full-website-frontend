@@ -236,9 +236,11 @@ export const FormPage = () => {
                                                 setConfirm(false);
                                                 res.json().then(json => {
                                                     const non_field = json.non_field_errors;
+                                                    console.log(Object.entries(json));
                                                     setError("\n".join([...Object.entries(json).flatMap(field => {
                                                         const fname = field[0];
                                                         const errors = field[1];
+                    
                                                         if (fname ===  "non_field_errors") {
                                                             return [];
                                                         }
