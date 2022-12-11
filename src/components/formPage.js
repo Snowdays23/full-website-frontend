@@ -74,7 +74,7 @@ export const FormPage = () => {
                         payment: openPayment && readPayment
                     }
                 })
-            })).json();
+            }));
 
     };
       
@@ -229,24 +229,26 @@ export const FormPage = () => {
                                     variant="contained"
                                     onClick={() => {
                                         submitForm().then(res => {
-
-                                            console.log(res.ok);
-
-                                            if(res.ok) {
-                                                setError();
+                                            if (res.status === 201) {
                                                 setConfirm(true);
+                                                setError();
                                             } else {
-                                                setError(Object.keys(res)[0]);
                                                 setConfirm(false);
-                                                console.log(Object.keys(res)[0]);
+                                                res.json().then(json => {
+                                                    non_field = json.non_field_errors;
+                                                    setError("\n".join(Object.entries(json).flatMap(field => {
+                                                        const fname = field[0];
+                                                        const errors = field[1];
+                                                        if (fname ===  "non_field_errors") {
+                                                            return [];
+                                                        }
+                                                        return errors.map(e => `${name}: ${e}`);
+                                                    })));
+                                                });
                                             }
-
                                         }).catch(err => {
-
-                                            setError(Object.keys(err)[0]);
-                                            console.log(Object.keys(err)[0]);
+                                            setError("Your request could not be fulfilled. Please retry, or contact us if you need.");
                                             setConfirm(false);
-
                                         });
                                     }}>Submit <Send fontSize={"inherit"} style={{marginLeft: 5}}/></Button>  
                                     :
