@@ -54,16 +54,16 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
         }
       ];
 
-      const [sport, setSport] = React.useState();
+      const [sport, setSport] = React.useState('none');
 
       const [maxGears, setMaxGears] = React.useState(1);
 
       const handleChangeSport = (event) => {
         setSport(event.target.value);
-        if(event.target.value === "Skii" || event.target.value === "Snowboard") {
+        if(event.target.value === "ski" || event.target.value === "snowboard") {
           setWantSkii(true)
           setNeedRent(false)
-          if(event.target.value === "Skii")
+          if(event.target.value === "ski")
             setMaxGears(4);
           else {
             if(currentGears.length > 3)
@@ -89,15 +89,15 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
       const sports = [
         {
-          value: 'None',
+          value: 'none',
           label: 'None',
         },
         {
-          value: 'Skii',
+          value: 'ski',
           label: "Skii",
         },
         {
-          value: 'Snowboard',
+          value: 'snowboard',
           label: 'Snowboard',
         }
       ]
@@ -129,7 +129,8 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
                 return [{name: g}];
               }
               return [];
-            })
+            }),
+            selected_sport: sport
           });
         } else {
           setFilledSport(false);
