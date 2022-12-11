@@ -64,7 +64,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           phone: phonenr,
           university: university,
           gender: gender,
-          needsAccomodation: needsAccomodation
+          needs_accomodation: needsAccomodation
         });
       }
       else {
