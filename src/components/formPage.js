@@ -230,16 +230,21 @@ export const FormPage = () => {
                                     onClick={() => {
                                         submitForm().then(res => {
 
+                                            console.log(res.ok);
+
                                             if(res.ok) {
                                                 setError();
                                                 setConfirm(true);
                                             } else {
-                                                throw new Error(Object.keys(res)[0]);
+                                                setError(Object.keys(res)[0]);
+                                                setConfirm(false);
+                                                console.log(Object.keys(res)[0]);
                                             }
 
                                         }).catch(err => {
 
-                                            setError(err);
+                                            setError(Object.keys(err)[0]);
+                                            console.log(Object.keys(res)[0]);
                                             setConfirm(false);
 
                                         });
