@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Home from '@mui/icons-material/Home';
-import { Typography } from '@mui/material/';
+import { Typography, Alert } from '@mui/material/';
 
 export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
@@ -136,8 +136,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         }
         ,
         {
-          value: 'ESADE',
-          label: "ESADE Business School",
+          value: 'LMU',
+          label: "LMU - Ludwig-Maximilians-Universität München",
         }
         
       ];
@@ -229,12 +229,25 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         </TextField>                                   
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
-                    <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
+                    <div className='col-6 col-lg-5 ' style={{position: "relative", right: 13}}>
+                        
                         <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
+                        <br/>
+                        
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
+
+                <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                    <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you gave to your university for Snowdays.</Alert>
+                    <Separator number={1} ></Separator>   
+                    <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong></Alert>
+
+                </div>
+
+                <div class="w-100"><br/></div>
+
                     <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
                             <label><Home style={{marginBottom: 5, marginRight: 5}} /> Need Accomodation <Checkbox defaultChecked onChange={handleChangeNeedsAccomodation} /></label>
