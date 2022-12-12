@@ -244,7 +244,8 @@ export const FormPage = () => {
                                                         if (fname ===  "non_field_errors") {
                                                             return [];
                                                         }
-                                                        return errors.map(e => `${fname}: ${e}`);
+                                                        // return errors.map(e => `${fname}: ${e}`);
+                                                        return errors;
                                                     }), ...non_field]));
                                                 });
                                             }
