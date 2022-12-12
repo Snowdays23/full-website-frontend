@@ -120,11 +120,12 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
         if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '' && (currentGears.find((value) => (value === "")) === undefined)) || needRent === false)) {
           setFilledSport(true);
           setSportData({
-            height: sport != null && sport !== "none" ? height || null : null,
-            weight: sport != null && sport !== "none" ? weight || null : null,
-            shoe_size: sport != null && sport !== "none" ? shoeSize || null : null, 
-            helmet_size: sport != null && sport !== "none" ? size || null : null,
-            rented_gear: sport != null && sport !== "none" ? currentGears.flatMap(g => {
+            height: needRent && sport != null && sport !== "none" ? height || null : null,
+            weight: needRent && sport != null && sport !== "none" ? weight || null : null,
+            shoe_size: needRent && sport != null && sport !== "none" ? shoeSize || null : null, 
+            helmet_size: needRent && sport != null && sport !== "none" ? size || null : null,
+            needs_rent: needRent,
+            rented_gear: needRent && sport != null && sport !== "none" ? currentGears.flatMap(g => {
               if (g && g !== "") {
                 return [{name: g}];
               }
