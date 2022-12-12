@@ -226,6 +226,12 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
 
                 <Separator number = {2} />
 
+                <div className='row justify-content-center'>
+                  <div className='col-11 col-lg-10' >
+                      <label className='small-text text-white font-poppins'> Please add and select every gear that you will need </label>
+                  </div>
+                </div>
+
                 {currentGears.map((val, index) => <div> <Gear id={index+1} value={val} currentGears={currentGears} setCurrentGears={setCurrentGears} sport={sport}/> <Separator number = {2} /> </div>)}
 
                 <div className='row justify-content-center'>
