@@ -53,13 +53,13 @@ export const FormPage = () => {
       
     const [filled, setFilled] = React.useState(false);
 
-    const [error, setError] = React.useState();
+    const [errors, setErrors] = React.useState([]);
     const [confirm, setConfirm] = React.useState(false);
 
 
     const submitForm = async evt => {
 
-        return await (await fetch("/api/participants", {
+        return await fetch("/api/participants", {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"
@@ -74,7 +74,7 @@ export const FormPage = () => {
                         payment: openPayment && readPayment
                     }
                 })
-            }));
+            });
 
     };
       
@@ -128,9 +128,9 @@ export const FormPage = () => {
                     <div className="w-100"></div>
                     
 
-                    {error ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
+                    {errors.length > 0 ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
                         <Alert severity="error">
-                            <AlertTitle>Error</AlertTitle> {error} — <strong>check it out!</strong>
+                            <AlertTitle>Error</AlertTitle> {errors.map(err => <div>&bull;&nbsp;{err}</div>)} — <strong>check it out!</strong>
                         </Alert>
                     </div> : <br/>}
 
@@ -139,7 +139,7 @@ export const FormPage = () => {
                     <Separator number={3} ></Separator>
                     <div className="w-100"></div>
                     
-                    {confirm  && !error ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
+                    {confirm  && errors.length == 0 ? <div className='col-11 col-lg-8' style={{textAlign: "left"}}>
                         <Alert severity="success">
                             <AlertTitle>Success</AlertTitle>
                             The form has been submitted successfully! <strong>You will soon receive an email</strong>
@@ -231,26 +231,15 @@ export const FormPage = () => {
                                         submitForm().then(res => {
                                             if (res.status === 201) {
                                                 setConfirm(true);
-                                                setError();
+                                                setErrors([]);
                                             } else {
                                                 setConfirm(false);
                                                 res.json().then(json => {
-                                                    const non_field = json.non_field_errors;
-                                                    console.log(Object.entries(json));
-                                                    setError("\n".join([...Object.entries(json).flatMap(field => {
-                                                        const fname = field[0];
-                                                        const errors = field[1];
-                    
-                                                        if (fname ===  "non_field_errors") {
-                                                            return [];
-                                                        }
-                                                        // return errors.map(e => `${fname}: ${e}`);
-                                                        return errors;
-                                                    }), ...non_field]));
+                                                    setErrors(Object.values(json).flatMap(f => f));
                                                 });
                                             }
                                         }).catch(err => {
-                                            setError("Your request could not be fulfilled. Please retry, or contact us if you need.");
+                                            setErrors(["Your request could not be fulfilled. Please retry, or contact us if you need."]);
                                             setConfirm(false);
                                         });
                                     }}>Submit <Send fontSize={"inherit"} style={{marginLeft: 5}}/></Button>  
