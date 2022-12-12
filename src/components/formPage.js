@@ -11,7 +11,7 @@ import { FormPageCatering } from './formpage/formPageCatering';
 import Button from '@mui/material/Button';
 import Send from '@mui/icons-material/Send';
 import { FormPageGeneral } from './formpage/formPageGeneral';
-import PrivacyPolicy from '../assets/docs/terms__cond.pdf';
+import PrivacyPolicy from '../assets/docs/PrivacyPolicy.pdf';
 import PaymentPolicy from '../assets/docs/PaymentPolicy.pdf';
 import TermsAndConditions from '../assets/docs/TermsAndConditions.pdf';
 import { Checkbox } from '@mui/material';
