@@ -120,16 +120,16 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
         if(sport !== '' && ((needRent === true && height !== '' && weight !== '' && shoeSize !== '' && size !== '' && (currentGears.find((value) => (value === "")) === undefined)) || needRent === false)) {
           setFilledSport(true);
           setSportData({
-            height: height || null,
-            weight: weight || null,
-            shoe_size: shoeSize || null,
-            helmet_size: size || null,
-            rented_gear: currentGears.flatMap(g => {
+            height: sport != null && sport !== "none" ? height || null : null,
+            weight: sport != null && sport !== "none" ? weight || null : null,
+            shoe_size: sport != null && sport !== "none" ? shoeSize || null : null, 
+            helmet_size: sport != null && sport !== "none" ? size || null : null,
+            rented_gear: sport != null && sport !== "none" ? currentGears.flatMap(g => {
               if (g && g !== "") {
                 return [{name: g}];
               }
               return [];
-            }),
+            }) : [],
             selected_sport: sport
           });
         } else {
