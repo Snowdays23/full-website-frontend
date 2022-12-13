@@ -238,7 +238,8 @@ export const FormPage = () => {
                                                 res.json().then(json => {
                                                     setErrors(Object.values(json).flatMap(f => f));
                                                 });
-                                                scrollRef.current.scrollTo(0, 0);
+                                                // scrollRef.current.scrollTo(0, 0);
+                                                window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
                                             }
                                         }).catch(err => {
                                             setErrors(["Your request could not be fulfilled. Please retry, or contact us if you need."]);
