@@ -35,6 +35,7 @@ export const FormPage = () => {
         },
     });
 
+    const scrollRef = React.createRef();
       
     const [readPrivacy, setReadPrivacy] = React.useState(false);
     const [readTerms, setReadTerms] = React.useState(false);
@@ -89,7 +90,7 @@ export const FormPage = () => {
     
     return (
 
-        <div className = "wrapper-outside  ">
+        <div className = "wrapper-outside" ref={scrollRef}>
             
             <div className='absolute overlay-1' style={{width: "100vw", minHeight: "100vh", height: "auto"}} >
 
@@ -237,7 +238,7 @@ export const FormPage = () => {
                                                 res.json().then(json => {
                                                     setErrors(Object.values(json).flatMap(f => f));
                                                 });
-                                                window.scrollTo(0,0);
+                                                scrollRef.current.scrollTo(0, 0);
                                             }
                                         }).catch(err => {
                                             setErrors(["Your request could not be fulfilled. Please retry, or contact us if you need."]);
