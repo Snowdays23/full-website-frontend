@@ -237,6 +237,7 @@ export const FormPage = () => {
                                                 res.json().then(json => {
                                                     setErrors(Object.values(json).flatMap(f => f));
                                                 });
+                                                window.scrollTo(0,0);
                                             }
                                         }).catch(err => {
                                             setErrors(["Your request could not be fulfilled. Please retry, or contact us if you need."]);

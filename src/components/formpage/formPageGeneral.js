@@ -157,6 +157,15 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <Separator number={2} />
               </div>
                 <div className='row justify-content-center'>
+
+                <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                    {visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you gave to your university for Snowdays.</Alert> : <div></div> }
+                    
+                    { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
+
+                </div>
+
+                <Separator number={2} />
                   
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
                         <TextField required id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)}/>
@@ -241,13 +250,6 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
-
-                <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
-                    {visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you gave to your university for Snowdays.</Alert> : <div></div> }
-                    
-                    { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
-
-                </div>
 
                 <div class="w-100"><br/></div>
 
