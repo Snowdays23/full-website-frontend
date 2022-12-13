@@ -49,6 +49,9 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [studnr, setStudnr] = React.useState('');
     const [phonenr, setPhonenr] = React.useState('');
 
+    const [visibleInfo1, setVisibleInfo1] = React.useState(false);
+    const [visibleInfo2, setVisibleInfo2] = React.useState(false);
+
 
     React.useEffect(() => {
       
@@ -166,7 +169,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)} onFocus = {() => setVisibleInfo1(true)} onBlur = { () => setVisibleInfo1(false)} />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
@@ -231,7 +234,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5 ' style={{position: "relative", right: 13}}>
                         
-                        <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+49 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}  onFocus = {() => setVisibleInfo2(true)} onBlur = { () => setVisibleInfo2(false)} />
                         <br/>
                         
                     </div>
@@ -240,9 +243,9 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
 
                 <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
-                    <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you gave to your university for Snowdays.</Alert>
-                    <Separator number={1} ></Separator>   
-                    <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong></Alert>
+                    {visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you gave to your university for Snowdays.</Alert> : <div></div> }
+                    
+                    { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
 
                 </div>
 
