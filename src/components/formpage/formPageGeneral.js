@@ -58,11 +58,12 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       if(gender !== '' && university !== '' && name !== '' && ( value !== '' && value !== null)
         && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' ) {
         setFilledGeneral(true);
+    
         setGeneralData({
           first_name: name,
           last_name: lastName,
           email: email,
-          dob: value.toDate().toISOString().substr(0, 10),
+          dob: `${value.toDate().getFullYear()}-${new String(value.toDate().getMonth() + 1).padStart(2, '0')}-${new String(value.toDate().getDate()).padStart(2, '0')}`,
           student_nr: studnr,
           phone: phonenr,
           university: university,
