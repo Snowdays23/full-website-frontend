@@ -3,6 +3,7 @@ import blueStars from '../../assets/img/blue_stars.svg';
 import bgMountains from '../../assets/img/mountains_illustration2.svg';
 import bgMountainsWEB from '../../assets/img/mountains_illustration2WEB.svg';
 import Separator from '../subcomponents/separator';
+import YTpreview from '../../assets/img/YTpreview.PNG';
 import "../../assets/css/bootstrap.min.css";
 import "../../assets/css/bootstrap-override.css";
 import "../../assets/css/styleBody1.css";
@@ -43,7 +44,11 @@ export default class Body1 extends Component {
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowFullScreen></iframe> */}
 
-                            <iframe id= "yt-video" src="https://www.youtube.com/embed/68TUBKxxVug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            {/* <iframe id= "yt-video" src="https://www.youtube.com/embed/68TUBKxxVug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
+
+                            <a  href="https://www.youtube.com/watch?v=68TUBKxxVug" target="_blank">
+                                <img id= "yt-video"  src={YTpreview}  />
+                            </a>
 
                         </div>
 
