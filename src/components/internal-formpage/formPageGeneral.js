@@ -143,11 +143,11 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <Separator number={2} />
                   
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setName(val.target.value)} error={ name === ''}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13 }}>
-                        <TextField required id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setLastName(val.target.value)}/>
+                        <TextField required id="filled-basic" label="Last Name" variant="filled" style={{width:'90%'}} onChange = {(val) => setLastName(val.target.value)} error={ lastName === ''}/>
                     </div>
                 </div>
                 <Separator number={2} ></Separator>
@@ -182,7 +182,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
                         <TextField 
-                            required id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} onChange = {(val) => setStudnr(val.target.value)} />
+                            required id="filled-basic" label="Student Nr" variant="filled" style={{width:'90%'}} onChange = {(val) => setStudnr(val.target.value)} error={ studnr === ''}/>
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
@@ -195,6 +195,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         variant="filled"
                         style={{width:'90%'}}
                         required
+                        error={ gender === ''}
                         >
                             {genders.map((option) => (
                                 <MenuItem key={option.value} value={option.value}>
@@ -208,7 +209,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
                     <div className='col-12 col-lg-11 ' style={{position: "relative"}}>
                         
-                        <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+39 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}  onFocus = {() => setVisibleInfo2(true)} onBlur = { () => setVisibleInfo2(false)} />
+                        <TextField required id="filled-basic" label="Phone Number" placeholder="ex:+39 3202020202" variant="filled" style={{width:'90%'}} onChange = {(val) => setPhonenr(val.target.value)}  onFocus = {() => setVisibleInfo2(true)} onBlur = { () => setVisibleInfo2(false)} error={ phonenr === ''}/>
                         <br/>
                         
                     </div>
@@ -242,6 +243,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             variant="filled"
                             style={{width:'90%'}}
                             required
+                            error={ type === ''}
                             >
                                 {types.map((option) => (
                                     <MenuItem key={option.value} value={option.value}>
@@ -260,7 +262,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             :
 
                             <TextField 
-                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}} onChange={(value) => setNrGuests(value.target.value)} InputProps={{ inputProps: { min: 1, max: 4 } }} defaultValue="1"/>
+                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}} onChange={(value) => setNrGuests(value.target.value)} InputProps={{ inputProps: { min: 1, max: 4 } }} defaultValue="1" error={ nrGuests === ''}/>
                           
                           }
                             
@@ -273,7 +275,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                       <div className='row justify-content-center'>                        
                           < div className='col-12 col-md-5' style={{position: "relative"}}>
                               <TextField 
-                                  required id="filled-basic" label="Room Number" variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
+                                  required id="filled-basic" label="Room Number" error={ roomNumber === ''} variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
                           </div>
                       </div>
                     </> : <div></div>
@@ -283,7 +285,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         
                         < div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
                             <TextField 
-                                required id="filled-basic" label="City" variant="filled" onChange={(value) => setCity(value.target.value)} style={{width:'90%'}}/>
+                                required id="filled-basic" label="City" error={ city === ''} variant="filled" onChange={(value) => setCity(value.target.value)} style={{width:'90%'}}/>
                         </div>
                         <div className="d-none d-lg-block col-lg-1"></div>
                         <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
@@ -297,12 +299,12 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         
                         < div className='col-8 col-lg-7' style={{position: "relative", right: -6}}>
                             <TextField 
-                                required id="filled-basic" label="Address" variant="filled" onChange={(value) => setAddress(value.target.value)} style={{width:'90%'}}/>
+                                required id="filled-basic" label="Address" variant="filled" onChange={(value) => setAddress(value.target.value)} style={{width:'90%'}} error={ address === ''}/>
                         </div>
                         <div className="d-none d-lg-block col-lg-1"></div>
                         <div className='col-4 col-lg-3' style={{position: "relative", right: 20}}>
                             <TextField 
-                                required id="filled-basic" label="Nr." variant="filled" onChange={(value) => setHouseNumber(value.target.value)} style={{width:'90%'}} />
+                                required id="filled-basic" label="Nr." variant="filled" onChange={(value) => setHouseNumber(value.target.value)} style={{width:'90%'}} error={ houseNumber === ''}/>
                         </div>
                     </div>
                     <Separator number={2} ></Separator>

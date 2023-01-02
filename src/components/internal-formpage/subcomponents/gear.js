@@ -60,6 +60,7 @@ export const Gear = ({id, value, currentGears, setCurrentGears, sport}) => {
                     onChange={handleChangeGear}
                     variant="filled"
                     style={{width:'90%'}}
+                    error={ gear === ''}
                     >
                         {gears.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
