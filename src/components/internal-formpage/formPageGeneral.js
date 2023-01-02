@@ -40,6 +40,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       setHost(event.target.checked);
     }
 
+    const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@unibz.it/;
+
     const [name, setName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -54,6 +56,10 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [roomNumber, setRoomNumber] = React.useState('');
     
     const [helper, setHelper] = React.useState(false);
+
+    const [emailValid, setEmailValid] = React.useState(false);
+
+    const isEmailValid = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@unibz.it$/.test(email);
     
     const handleChangeType = (event) => {
       setType(event.target.value);
@@ -67,7 +73,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     React.useEffect(() => {
       
       if(gender !== ''  && name !== '' && ( value !== '' && value !== null)
-        && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' 
+        && name !== ''&& lastName !== '' && email !== '' && isEmailValid(email) === true && studnr !== '' && phonenr !== '' 
         && ((host === true && type !== '' && city !== '' && cap !== '' && address !== '' && houseNumber !== ''
         && ((type === "StudentDorm" && roomNumber !== '') || (type !== "StudentDorm" && nrGuests !== ''))) || host === false)) {
         setFilledGeneral(true);
@@ -147,7 +153,16 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" label="Unibz Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)}  />
+                        <TextField required id="filled-basic" label="Unibz Email" variant="filled" style={{width:'90%'}}  onChange = {(val) =>  {
+                          if(isEmailValid(val.target.value)){
+                            setEmail(val.target.value);
+                            setEmailValid(true);
+                          }else{
+                            setEmail('');
+                            setEmailValid(false);
+                          }}}
+                          error={!emailValid}
+                          />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5' style={{position: "relative", right: 13}} >
