@@ -50,6 +50,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [city, setCity] = React.useState('');
     const [cap, setCap] = React.useState('');
     const [address, setAddress] = React.useState('');
+    const [houseNumber, setHouseNumber] = React.useState('');
+    const [roomNumber, setRoomNumber] = React.useState('');
     
     const [helper, setHelper] = React.useState(false);
     
@@ -66,7 +68,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       
       if(gender !== ''  && name !== '' && ( value !== '' && value !== null)
         && name !== ''&& lastName !== '' && email !== '' && studnr !== '' && phonenr !== '' 
-        && ((host === true && type !== '' && nrGuests !== '' && city !== '' && cap !== '' && address !== '') || host === false)) {
+        && ((host === true && type !== '' && city !== '' && cap !== '' && address !== '' && houseNumber !== ''
+        && ((type === "StudentDorm" && roomNumber !== '') || (type !== "StudentDorm" && nrGuests !== ''))) || host === false)) {
         setFilledGeneral(true);
     
         setGeneralData({
@@ -85,7 +88,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         setGeneralData({});
       }
 
-    },[gender, value, name, lastName, email, studnr, phonenr, host, type, nrGuests, city, cap, address]);
+    },[gender, value, name, lastName, email, studnr, phonenr, host, type, nrGuests, city, cap, address, houseNumber, roomNumber]);
 
     const genders = [
         {
@@ -242,13 +245,24 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             :
 
                             <TextField 
-                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}} onChange={(value) => setNrGuests(value.target.value)} defaultValue="1"/>
+                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}} onChange={(value) => setNrGuests(value.target.value)} InputProps={{ inputProps: { min: 1, max: 4 } }} defaultValue="1"/>
                           
                           }
                             
                         </div>
 
                     </div>
+                    { type === "StudentDorm" ?
+                    <>
+                      <Separator number={2} ></Separator>
+                      <div className='row justify-content-center'>                        
+                          < div className='col-12 col-md-5' style={{position: "relative"}}>
+                              <TextField 
+                                  required id="filled-basic" label="Room Number" variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
+                          </div>
+                      </div>
+                    </> : <div></div>
+                    }
                     <Separator number={2} ></Separator>
                     <div className='row justify-content-center'>
                         
@@ -266,9 +280,14 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     <Separator number={2} ></Separator>
                     <div className='row justify-content-center'>
                         
-                        < div className='col-12 col-lg-11' style={{position: "relative"}}>
+                        < div className='col-8 col-lg-7' style={{position: "relative", right: -6}}>
                             <TextField 
                                 required id="filled-basic" label="Address" variant="filled" onChange={(value) => setAddress(value.target.value)} style={{width:'90%'}}/>
+                        </div>
+                        <div className="d-none d-lg-block col-lg-1"></div>
+                        <div className='col-4 col-lg-3' style={{position: "relative", right: 20}}>
+                            <TextField 
+                                required id="filled-basic" label="Nr." variant="filled" onChange={(value) => setHouseNumber(value.target.value)} style={{width:'90%'}} />
                         </div>
                     </div>
                     <Separator number={2} ></Separator>
