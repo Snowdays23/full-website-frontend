@@ -6,30 +6,29 @@ import "../../../assets/css/style.css";
 export const Navbar = () => {
     
     return(
-        <div className="relaitve offset-up-0 overlay-2">
+        <div className="relative overlay-2" >
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a className="navbar-brand font-josefin normal-text pl-3 p-3 mr-2 ml-2" href="#"> ❄ HOME </a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">Navbar</a>
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
+                <div className="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            <a className="nav-link font-josefin small-text mr-2 ml-2" href="#">Sponsors</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-josefin small-text mr-2 ml-2" href="#">Participants</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-josefin small-text mr-2 ml-2" href="#">Sustainability</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link font-josefin small-text mr-2 ml-2" href="#">About Us</a>
+                        </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
 
