@@ -50,7 +50,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     
     const [nrGuests, setNrGuests] = React.useState(1);
     const [city, setCity] = React.useState('');
-    const [cap, setCap] = React.useState('');
+    const [cap, setCap] = React.useState('39100');
     const [address, setAddress] = React.useState('');
     const [houseNumber, setHouseNumber] = React.useState('');
     const [roomNumber, setRoomNumber] = React.useState('');
@@ -288,7 +288,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         <div className="d-none d-lg-block col-lg-1"></div>
                         <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
                             <TextField 
-                                required id="filled-basic" label="CAP" type="number" variant="filled" onChange={(value) => setCap(value.target.value)} style={{width:'90%'}} />
+                                required id="filled-basic" label="CAP" type="number" variant="filled" defaultValue="39100" disabled style={{width:'90%'}} />
                         </div>
 
                     </div>
