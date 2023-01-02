@@ -10,6 +10,7 @@ import Separator from './subcomponents/separator';
 import bg from "../assets/img/real-mountains.png";
 import bgWEB from '../assets/img/real-mountainsWEB.png';
 import Snowfall from 'react-snowfall';
+import { Navbar } from './homepage/subcomponents/navbar';
 
 export const HomePage = () => {
 
@@ -31,6 +32,7 @@ export const HomePage = () => {
             </div>
           </div>
       </div>
+      <Navbar></Navbar>
       <Header></Header>
       <Body1></Body1>
       <Body2></Body2>
