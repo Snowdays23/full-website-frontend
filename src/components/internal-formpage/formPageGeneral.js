@@ -54,6 +54,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [address, setAddress] = React.useState('');
     const [houseNumber, setHouseNumber] = React.useState('');
     const [roomNumber, setRoomNumber] = React.useState('');
+    const [dorm, setDorm] = React.useState('');
     
     const [helper, setHelper] = React.useState(false);
 
@@ -74,8 +75,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       
       if(gender !== ''  && name !== '' && ( value !== '' && value !== null)
         && name !== ''&& lastName !== '' && email !== '' && isEmailValid(email) === true && studnr !== '' && phonenr !== '' 
-        && ((host === true && type !== '' && city !== '' && cap !== '' && address !== '' && houseNumber !== ''
-        && ((type === "StudentDorm" && roomNumber !== '') || (type !== "StudentDorm" && nrGuests !== ''))) || host === false)) {
+        && ((host === true && type !== '' 
+        && ((type === "StudentDorm" && roomNumber !== '' && dorm !== '') || (type !== "StudentDorm" && nrGuests !== '' && city !== '' && cap !== '' && address !== '' && houseNumber !== ''))) || host === false)) {
         setFilledGeneral(true);
     
         setGeneralData({
@@ -94,7 +95,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         setGeneralData({});
       }
 
-    },[gender, value, name, lastName, email, studnr, phonenr, host, type, nrGuests, city, cap, address, houseNumber, roomNumber]);
+    },[gender, value, name, lastName, email, studnr, phonenr, host, type, nrGuests, city, cap, address, houseNumber, roomNumber, dorm]);
 
     const genders = [
         {
@@ -121,6 +122,25 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           label: 'Private Accomodation',
         }
       ];
+
+      const dorms = [
+        {
+          value: 'Rigler',
+          label: 'Peter Rigler',
+        },
+        {
+          value: 'UniverCity',
+          label: 'UniverCity',
+        },
+        {
+          value: 'Dante',
+          label: 'Appartamenti Dante',
+        },
+        {
+          value: 'Elisabethinum',
+          label: 'Elisabethinum',
+        }
+      ]
     
         return (
             <div>              
@@ -273,13 +293,34 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                     <>
                       <Separator number={2} ></Separator>
                       <div className='row justify-content-center'>                        
-                          < div className='col-12 col-md-5' style={{position: "relative"}}>
+                          < div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
+                            <TextField
+                              id="filled-select-student-dorm"
+                              select
+                              label="Student Dorm"
+                              value={dorm}
+                              onChange={(event) => setDorm(event.target.value)}
+                              variant="filled"
+                              style={{width:'90%'}}
+                              required
+                              error={ dorm === ''}
+                              >
+                                  {dorms.map((option) => (
+                                      <MenuItem key={option.value} value={option.value}>
+                                      {option.label}
+                                      </MenuItem>
+                                  ))}
+                            </TextField>
+                         </div>
+                          <div className="d-none d-lg-block col-lg-1"></div>
+                          < div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
                               <TextField 
-                                  required id="filled-basic" label="Room Number" error={ roomNumber === ''} variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
+                                  required id="filled-basic-rn" label="Room Number" error={ roomNumber === ''} variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
                           </div>
                       </div>
-                    </> : <div></div>
-                    }
+                    </> : 
+                    <>
+
                     <Separator number={2} ></Separator>
                     <div className='row justify-content-center'>
                         
@@ -290,7 +331,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         <div className="d-none d-lg-block col-lg-1"></div>
                         <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
                             <TextField 
-                                required id="filled-basic" label="CAP" type="number" variant="filled" defaultValue="39100" disabled style={{width:'90%'}} />
+                                required id="filled-basic-cap" label="CAP" type="number" variant="filled" defaultValue="39100" disabled style={{width:'90%'}} />
                         </div>
 
                     </div>
@@ -308,6 +349,10 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         </div>
                     </div>
                     <Separator number={2} ></Separator>
+                    
+                    </>
+                    }
+                    
                   </div>
 
                    : <div></div>
