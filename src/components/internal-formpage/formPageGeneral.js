@@ -49,7 +49,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [phonenr, setPhonenr] = React.useState('');
     
     const [nrGuests, setNrGuests] = React.useState(1);
-    const [city, setCity] = React.useState('');
+    const [city, setCity] = React.useState('Bolzano');
     const [cap, setCap] = React.useState('39100');
     const [address, setAddress] = React.useState('');
     const [houseNumber, setHouseNumber] = React.useState('');
@@ -68,6 +68,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         setNrGuests(1);
     };
 
+    const [visibleInfo1, setVisibleInfo1] = React.useState(false);
     const [visibleInfo2, setVisibleInfo2] = React.useState(false);
     
     
@@ -76,7 +77,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       if(gender !== ''  && name !== '' && ( value !== '' && value !== null)
         && name !== ''&& lastName !== '' && email !== '' && isEmailValid(email) === true && studnr !== '' && phonenr !== '' 
         && ((host === true && type !== '' 
-        && ((type === "StudentDorm" && roomNumber !== '' && dorm !== '') || (type !== "StudentDorm" && nrGuests !== '' && city !== '' && cap !== '' && address !== '' && houseNumber !== ''))) || host === false)) {
+        && ((type === "StudentDorm" && roomNumber !== '' && dorm !== '') || (type !== "StudentDorm" && nrGuests !== '' && (city === 'Bolzano' || city === 'bolzano') && cap === '39100' && address !== '' && houseNumber !== ''))) || host === false)) {
         setFilledGeneral(true);
     
         setGeneralData({
@@ -126,7 +127,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       const dorms = [
         {
           value: 'Rigler',
-          label: 'Peter Rigler',
+          label: 'Studentato Peter Rigler',
         },
         {
           value: 'UniverCity',
@@ -139,6 +140,11 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         {
           value: 'Elisabethinum',
           label: 'Elisabethinum',
+        }
+        ,
+        {
+          value: 'Rainerum',
+          label: 'College Rainerum',
         }
       ]
     
@@ -156,6 +162,8 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
 
                 <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                    
+                    { visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you must use your unibz <strong> email </strong></Alert> : <div></div> }
                     { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
 
                 </div>
@@ -182,6 +190,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             setEmailValid(false);
                           }}}
                           error={!emailValid}
+                          onFocus = {() => setVisibleInfo1(true)} onBlur = { () => setVisibleInfo1(false)}
                           />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
@@ -326,15 +335,31 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                         
                         < div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
                             <TextField 
-                                required id="filled-basic" label="City" error={ city === ''} variant="filled" onChange={(value) => setCity(value.target.value)} style={{width:'90%'}}/>
+                                required id="filled-basic" label="City" error={ city !== 'Bolzano' } variant="filled" onChange={(value) => setCity(value.target.value)} style={{width:'90%'}} defaultValue="Bolzano" />
                         </div>
                         <div className="d-none d-lg-block col-lg-1"></div>
                         <div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
                             <TextField 
-                                required id="filled-basic-cap" label="CAP" type="number" variant="filled" defaultValue="39100" disabled style={{width:'90%'}} />
+                                required id="filled-basic-cap" label="CAP" type="number" variant="filled" defaultValue="39100"  style={{width:'90%'}} onChange={(event) => setCap(event.target.value)} error = { cap !== "39100"}/>
                         </div>
 
                     </div>
+
+                    {
+                      city !== "Bolzano" ||  cap !== "39100" ?
+                      <>
+                      <Separator number={2} ></Separator>
+                      <div className='row justify-content-center'>
+                        <div className='col-11 col-lg-10'>
+                        <Alert severity="error"> <strong> BE CAREFUL! </strong> You can only host if you live in Bolzano </Alert>
+                        </div>
+                      </div>
+                      </>
+                      :
+                      <> </>
+                    }
+
+                    
                     <Separator number={2} ></Separator>
                     <div className='row justify-content-center'>
                         
