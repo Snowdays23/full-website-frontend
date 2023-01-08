@@ -84,11 +84,19 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           first_name: name,
           last_name: lastName,
           email: email,
+          university: 'unibz',
           dob: `${value.toDate().getFullYear()}-${new String(value.toDate().getMonth() + 1).padStart(2, '0')}-${new String(value.toDate().getDate()).padStart(2, '0')}`,
           student_nr: studnr,
           phone: phonenr,
           gender: gender,
-          needs_accomodation: host
+          is_host: host,
+          is_helper: helper,
+          residence: {
+            address: address,
+            street_nr: houseNumber,
+            is_college: dorm && dorm !== '',
+            college_slug: dorm
+          }
         });
       }
       else {
@@ -126,24 +134,24 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
       const dorms = [
         {
-          value: 'Rigler',
+          value: 'rigler',
           label: 'Studentato Peter Rigler',
         },
         {
-          value: 'UniverCity',
+          value: 'univercity',
           label: 'UniverCity',
         },
         {
-          value: 'Dante',
+          value: 'dante',
           label: 'Appartamenti Dante',
         },
         {
-          value: 'Elisabethinum',
+          value: 'elisabethinum',
           label: 'Elisabethinum',
         }
         ,
         {
-          value: 'Rainerum',
+          value: 'rainerum',
           label: 'College Rainerum',
         }
       ]
