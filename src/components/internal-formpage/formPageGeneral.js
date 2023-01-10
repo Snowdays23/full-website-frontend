@@ -92,11 +92,15 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           is_host: host,
           is_helper: helper,
           residence: {
-            address: address,
-            street_nr: houseNumber,
-            is_college: dorm && dorm !== '',
+            address: address || "-",
+            street_nr: houseNumber || "-",
+            city: city,
+            postal_code: cap,
+            is_college: !!dorm && dorm !== '',
             college_slug: dorm
-          }
+          },
+          guests: nrGuests,
+          room_nr: roomNumber
         });
       }
       else {
@@ -104,7 +108,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         setGeneralData({});
       }
 
-    },[gender, value, name, lastName, email, studnr, phonenr, host, type, nrGuests, city, cap, address, houseNumber, roomNumber, dorm]);
+    },[gender, value, name, lastName, email, studnr, phonenr, host, helper, type, nrGuests, city, cap, address, houseNumber, roomNumber, dorm]);
 
     const genders = [
         {
@@ -135,7 +139,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       const dorms = [
         {
           value: 'rigler',
-          label: 'Studentato Peter Rigler',
+          label: 'Studentato Peter Rigler'
         },
         {
           value: 'univercity',
@@ -397,7 +401,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
                     <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
-                            <label><PanTool style={{marginBottom: 5, marginRight: 5}} /> I Want To Be Helper <Checkbox onChange={(event) => {setHelper(event.target.checked);}}/></label>
+                            <label><PanTool style={{marginBottom: 5, marginRight: 5}} /> I Want To Be Helper <Checkbox onChange={(event) => {console.log("helper: " + event.target.checked); setHelper(event.target.checked);}}/></label>
                         </div>
                     </div>
                 </div>
