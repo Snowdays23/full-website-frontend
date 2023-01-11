@@ -175,7 +175,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
                 <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
                     
-                    { visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you must use your unibz <strong> email </strong></Alert> : <div></div> }
+                    { visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you must use your<strong> SHORT </strong>unibz<strong> email </strong>. Ex: sname@unibz.it </Alert> : <div></div> }
                     { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
 
                 </div>
