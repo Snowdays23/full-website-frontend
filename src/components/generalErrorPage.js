@@ -17,11 +17,11 @@ export const GeneralErrorPage = () => {
     const fromCodeToMsg = (code) => {
         switch(code) {
             case '450':
-                return "It seems there's already a payment session associated. Please pay with the first payment session you have opened.";
+                return "It seems there's already a payment session associated. PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
             case '451':
-                return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over.";
+                return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over, by clicking the link in your email again.";
             case '452':
-                return "It seems the payment was not ready to be captured. Please start over.";
+                return "It seems the payment was not ready to be captured. Please start the payment process over, by clicking the link in your email again.";
             case '453':
                 return "It seems the payment could not be captured. Please contact us!";
             default:
