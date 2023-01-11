@@ -15,7 +15,3 @@ jobs:
         node-version: '18.0'
         cache: 'npm'
     - run: npm run build
-    - uses: actions/upload-artifact@v3.1.2
-      with:
-        name: built_frontend
-        path: build/static
