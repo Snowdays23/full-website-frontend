@@ -19,5 +19,6 @@ jobs:
     - run: npm install
     - run: CI=false npm run build
     - uses: actions/upload-artifact@v3.1.2
+      name: build_frontend
       with:
-        path: build/static
+        path: build
