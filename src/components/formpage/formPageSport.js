@@ -124,7 +124,7 @@ export const FormPageSport = ({setFilledSport, setSportData}) => {
             weight: needRent && sport != null && sport !== "none" ? weight || null : null,
             shoe_size: needRent && sport != null && sport !== "none" ? shoeSize || null : null, 
             helmet_size: needRent && sport != null && sport !== "none" ? size || null : null,
-            needs_rent: needRent,
+            needs_rent: needRent, 
             rented_gear: needRent && sport != null && sport !== "none" ? currentGears.flatMap(g => {
               if (g && g !== "") {
                 return [{name: g}];
