@@ -9,26 +9,34 @@ import Yeti from '../assets/img/yeti_illustration.svg';
 import { useSearchParams } from "react-router-dom";
 import { Cancel } from '@mui/icons-material';   
 
+const fromCodeToMsg = (code) => {
+    switch(code) {
+        case '450':
+            return "It seems there's already a payment session associated. PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
+        case '451':
+            return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over, by clicking the link in your email again.";
+        case '452':
+            return "It seems the payment was not ready to be captured. Please start the payment process over, by clicking the link in your email again.";
+        case '453':
+            return "It seems the payment could not be captured. Please contact us!";
+        default:
+            return "Well, something really weiiiird happened, but we don't know what :/"
+    }
+}
+
 export const GeneralErrorPage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
     
+    React.useEffect(() => {
+        const url = searchParams.get("link");
 
-    const fromCodeToMsg = (code) => {
-        switch(code) {
-            case '450':
-                return "It seems there's already a payment session associated. PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
-            case '451':
-                return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over, by clicking the link in your email again.";
-            case '452':
-                return "It seems the payment was not ready to be captured. Please start the payment process over, by clicking the link in your email again.";
-            case '453':
-                return "It seems the payment could not be captured. Please contact us!";
-            default:
-                return "Well, something really weiiiird happened, but we don't know what :/"
-        }
-    }
-    
+        if(url !== undefined && url !== null && url !== '')
+            setTimeout(() => {
+                window.location.href = url;
+            }, 5000);
+      }, []);
+
     return (
 
         <div className = "wrapper-outside  ">
@@ -66,6 +74,14 @@ export const GeneralErrorPage = () => {
                     <div className='col-8'>
                         <h2 className='text-black font-josefin subtitle'>{fromCodeToMsg(searchParams.get("code"))}</h2>
                     </div>
+
+                    {
+                        searchParams.get("code") === '450' ?
+                        <div className='col-8'>
+                            <h2 className='text-black font-josefin subtitle'> <a href={searchParams.get("link")}> If you don't get redirected CLICK HERE </a></h2>
+                        </div> 
+                        : <></>
+                    }
 
                     <div className='w-100'></div>
 
