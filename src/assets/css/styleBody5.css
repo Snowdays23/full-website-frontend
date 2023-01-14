@@ -1,3 +1,8 @@
+#wrapper-outside-body-5 {
+    height: 200px;
+    width: 100vw;
+}
+
 #img-social-logo {
     width: 17vw;
     height: auto;
@@ -28,6 +33,11 @@
         height: auto;
         background-position:center;
         padding: 3vw;
+    }
+
+    #wrapper-outside-body-5 {
+        height: 500px;
+        width: 100vw;
     }
     
 

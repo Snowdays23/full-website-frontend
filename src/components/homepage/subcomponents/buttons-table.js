@@ -16,7 +16,7 @@ function ButtonsTable ({buttons, links}) {
 
                 <div className='row justify-content-center ' >
 
-                    <div>
+                    <div className='col-12 col-lg-8'>
                         {table}
                     </div>
                     

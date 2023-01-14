@@ -3,6 +3,8 @@ import bgMountains from '../../assets/img/mountains_illustration3.svg';
 import instagram from '../../assets/img/socialsLogo/instagram.svg';
 import facebook from '../../assets/img/socialsLogo/facebook.svg';
 import youtube from '../../assets/img/socialsLogo/youtube.svg';
+import tiktok from '../../assets/img/socialsLogo/tiktok.svg';
+import linkedin from '../../assets/img/socialsLogo/linkedin.svg';
 import bgMountains2 from '../../assets/img/mountains_illustration2.svg'; 
 import "../../assets/css/bootstrap.min.css";
 import "../../assets/css/bootstrap-override.css";
@@ -30,7 +32,9 @@ export default class Body5 extends Component {
 
             <div>
 
-                <div  className='wrapper-outside-body relative offset-up-20'>
+            
+
+                <div id="wrapper-outside-body-5" className='wrapper-outside-body relative offset-up-20'>
 
                     <div className='wrapper-outside-body relative overlay-1 full-width'>
 
@@ -84,7 +88,10 @@ export default class Body5 extends Component {
                         </div>
                     </div>  
 
-                    <div className='relative overlay-1 '>
+                    <div id="wrapper-outside-body-5" className='wrapper-outside-body relative offset-up-1'>
+                     </div>
+
+                    <div className='relative overlay-1 offset-up-21'>
 
                         <img src={bgMountains2} id="bg-mountains-end" className='absolute offset-down-3 offset-right-0' alt="Stylized mountains"/> 
                             
@@ -101,24 +108,24 @@ export default class Body5 extends Component {
 
                             </div>    
 
-                            <div className='d-none d-sm-block'>
+                            {/* <div className='d-none d-sm-block'>
                                 <Separator number={10} ></Separator>
-                            </div>
+                            </div> */}
 
                             <div className='d-none d-lg-block'>
-                                <Separator number={12} ></Separator>
+                                <Separator number={15} ></Separator>
                             </div>
 
                             <div className=' row justify-content-center offset-down-10 mt-5 pt-5'> 
 
-                                <ButtonsTable buttons = {[instagram, youtube, facebook]} links = {["https://www.instagram.com/snowdays.bolzano/","https://www.youtube.com/channel/UCthdDzE2fTo47z26YIDDf-g","https://www.facebook.com/Snowdays.Bolzano/"]}></ButtonsTable>
+                                <ButtonsTable buttons = {[instagram, youtube, facebook, tiktok, linkedin]} links = {["https://www.instagram.com/snowdays.bolzano/","https://www.youtube.com/channel/UCthdDzE2fTo47z26YIDDf-g","https://www.facebook.com/Snowdays.Bolzano/", "https://www.tiktok.com/@snowdays.bz", "https://www.linkedin.com/company/snowdays"]}></ButtonsTable>
                             </div>
 
                             <div className='d-none d-lg-block'>
                                 <Separator number={12} ></Separator>
                             </div>
 
-                            <div className='row justify-content-center '>
+                            <div className='row justify-content-center pb-5 '>
                                 <span className='small-text text-white blue-shadow'>© Copyright 2022 Snowdays. All Rights Reserved.</span>
                             </div>
 
@@ -129,6 +136,8 @@ export default class Body5 extends Component {
                     </div>                    
 
                 </div>
+
+                
 
                 </div>
 

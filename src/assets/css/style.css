@@ -112,6 +112,10 @@
     top: -38vw;
 }
 
+.offset-up-21 {
+    top: -40vw;
+}
+
 .offset-up-25 {
     top: -60vw;
 }
@@ -150,6 +154,10 @@
 
 .absolute {
     position: absolute;
+}
+
+.overlay-minus-1{
+    z-index: -1;
 }
 
 .overlay-1{
