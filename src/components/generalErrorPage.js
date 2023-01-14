@@ -19,6 +19,8 @@ const fromCodeToMsg = (code) => {
             return "It seems the payment was not ready to be captured. Please start the payment process over, by clicking the link in your email again.";
         case '453':
             return "It seems the payment could not be captured. Please contact us!";
+        case '454':
+            return "Your payment link has expired! Remember you have to pay within 2 HOURS after submitting the form to secure your ticket! Please sign up again using the online form.";
         default:
             return "Well, something really weiiiird happened, but we don't know what :/"
     }
@@ -65,7 +67,13 @@ export const GeneralErrorPage = () => {
                 <div className='row justify-content-center'>
 
                     <div className='col-10 '>
-                        <h2 className='text-black font-josefin title'>AN ERROR OCCURRED</h2>
+                        {
+                            searchParams.get("code") === '454' ?
+                            <h2 className='text-black font-josefin title'>ATTENTION</h2>
+                            : 
+                            <h2 className='text-black font-josefin title'>AN ERROR OCCURRED</h2>
+                        }
+                        
                     </div>
 
                     <div className="w-100"></div>
