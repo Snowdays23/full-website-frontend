@@ -32,7 +32,7 @@ export const HomePage = () => {
             </div>
           </div>
       </div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <Header></Header>
       <Body1></Body1>
       <Body2></Body2>
