@@ -70,6 +70,10 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
     const [visibleInfo1, setVisibleInfo1] = React.useState(false);
     const [visibleInfo2, setVisibleInfo2] = React.useState(false);
+
+    const isNrGuestsWrong = (nrGuests ) => {
+        return nrGuests === '' || nrGuests > 4 || nrGuests < 1;
+    }
     
     
     React.useEffect(() => {
@@ -77,7 +81,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       if(gender !== ''  && name !== '' && ( value !== '' && value !== null)
         && name !== ''&& lastName !== '' && email !== '' && isEmailValid(email) === true && studnr !== '' && phonenr !== '' 
         && ((host === true && type !== '' 
-        && ((type === "StudentDorm" && roomNumber !== '' && dorm !== '') || (type !== "StudentDorm" && nrGuests !== '' && (city === 'Bolzano' || city === 'bolzano') && cap === '39100' && address !== '' && houseNumber !== ''))) || host === false)) {
+        && ((type === "StudentDorm" && roomNumber !== '' && dorm !== '') || (type !== "StudentDorm" && nrGuests !== '' && !isNrGuestsWrong(nrGuests) && (city === 'Bolzano' || city === 'bolzano') && cap === '39100' && address !== '' && houseNumber !== ''))) || host === false)) {
         setFilledGeneral(true);
     
         setGeneralData({
@@ -303,13 +307,30 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                             :
 
                             <TextField 
-                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}} onChange={(value) => setNrGuests(value.target.value)} InputProps={{ inputProps: { min: 1, max: 4 } }} defaultValue="1" error={ nrGuests === ''}/>
+                                required id="filled-basic" label="Nr Guests" type="number" variant="filled" style={{width:'90%'}}
+                                onChange={(value) => setNrGuests(value.target.value)} InputProps={{ inputProps: { min: 1, max: 4 } }} 
+                                defaultValue="1" error={ isNrGuestsWrong(nrGuests) }/>
                           
                           }
                             
                         </div>
 
                     </div>
+
+                    {
+                      isNrGuestsWrong(nrGuests) ?
+                      <>
+                      <Separator number={2} ></Separator>
+                      <div className='row justify-content-center'>
+                        <div className='col-11 col-lg-10'>
+                        <Alert severity="error"> <strong> BE CAREFUL! </strong> You can host up to 4 people! </Alert>
+                        </div>
+                      </div>
+                      </>
+                      :
+                      <> </>
+                    }
+
                     { type === "StudentDorm" ?
                     <>
                       <Separator number={2} ></Separator>
@@ -336,7 +357,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                           <div className="d-none d-lg-block col-lg-1"></div>
                           < div className='col-6 col-lg-5' style={{position: "relative", right: 13}}>
                               <TextField 
-                                  required id="filled-basic-rn" label="Room Number" error={ roomNumber === ''} variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}}/>
+                                  required id="filled-basic-rn" label="Room Number" error={ roomNumber === ''} variant="filled" onChange={(value) => setRoomNumber(value.target.value)} style={{width:'90%'}} />
                           </div>
                       </div>
                     </> : 
