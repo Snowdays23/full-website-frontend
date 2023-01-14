@@ -40,7 +40,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
       setHost(event.target.checked);
     }
 
-    const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@unibz.it/;
+    const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(unibz|cons\.bz).it/;
 
     const [name, setName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
@@ -60,7 +60,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
     const [emailValid, setEmailValid] = React.useState(false);
 
-    const isEmailValid = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@unibz.it$/.test(email);
+    const isEmailValid = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(unibz|cons\.bz).it$/.test(email);
     
     const handleChangeType = (event) => {
       setType(event.target.value);

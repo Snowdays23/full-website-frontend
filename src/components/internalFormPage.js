@@ -220,6 +220,13 @@ export const InternalFormPage = () => {
 
                                 </div>
 
+                                <Separator number={2} ></Separator>
+                                <div className='row justify-content-center'>
+                                    <div className='col-11 col-lg-10'>
+                                    <Alert severity="warning"><strong>IMPORTANT!</strong> After submitting you need to pay in the next <strong> 2 HOURS! </strong> Otherwise you'll need to fill the form again. </Alert>
+                                    </div>
+                                </div>
+
                                 <Separator number={5} ></Separator>
 
                                 <div className="row justify-content-center">
