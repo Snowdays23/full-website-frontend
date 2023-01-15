@@ -12,7 +12,7 @@ import { Cancel } from '@mui/icons-material';
 const fromCodeToMsg = (code) => {
     switch(code) {
         case '450':
-            return "It seems there's already a payment session associated. PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
+            return "It seems there's already a payment session associated (it might have been OUTLOOK checking the link). PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
         case '451':
             return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over, by clicking the link in your email again.";
         case '452':
@@ -36,7 +36,7 @@ export const GeneralErrorPage = () => {
         if(url !== undefined && url !== null && url !== '')
             setTimeout(() => {
                 window.location.href = url;
-            }, 5000);
+            }, 10000);
       }, []);
 
     return (
@@ -68,7 +68,7 @@ export const GeneralErrorPage = () => {
 
                     <div className='col-10 '>
                         {
-                            searchParams.get("code") === '454' ?
+                            (searchParams.get("code") === '454' || searchParams.get("code") === '450') ?
                             <h2 className='text-black font-josefin title'>ATTENTION</h2>
                             : 
                             <h2 className='text-black font-josefin title'>AN ERROR OCCURRED</h2>
