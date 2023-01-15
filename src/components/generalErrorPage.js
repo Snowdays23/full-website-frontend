@@ -14,7 +14,7 @@ const fromCodeToMsg = (code) => {
         case '450':
             return "It seems there's already a payment session associated (it might have been OUTLOOK checking the link). PLEASE ONLY PAY WITH THIS SESSION NOW, YOU'LL BE SOON REDIRECTED TO THE CHECKOUT PAGE.";
         case '451':
-            return "It seems there's been an error retrieving checkout session or payment intent. Please start the payment process over, by clicking the link in your email again.";
+            return "Ops! Your checkout session could not be retrieved. Check whether you have already completed the payment and received the confirmation email. If not, please start over by clicking the checkout link.";
         case '452':
             return "It seems the payment was not ready to be captured. Please start the payment process over, by clicking the link in your email again.";
         case '453':
@@ -68,7 +68,7 @@ export const GeneralErrorPage = () => {
 
                     <div className='col-10 '>
                         {
-                            (searchParams.get("code") === '454' || searchParams.get("code") === '450') ?
+                            (searchParams.get("code") === '454' || searchParams.get("code") === '450' || searchParams.get("code") === '451') ?
                             <h2 className='text-black font-josefin title'>ATTENTION</h2>
                             : 
                             <h2 className='text-black font-josefin title'>AN ERROR OCCURRED</h2>
