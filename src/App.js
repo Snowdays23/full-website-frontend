@@ -19,7 +19,7 @@ export default function App ()  {
         <Routes> 
           <Route path="/" element={<HomePage/>} />
           <Route path="/externals/form" element={<FormPage/>}/>
-          <Route path="/internals/form" element={<MaintanancePage/>}/>
+          <Route path="/internals/form" element={<InternalFormPage/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
