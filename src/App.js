@@ -8,6 +8,7 @@ import { UnsuccessCheckoutPage } from './components/unsuccessCheckoutPage';
 import { NotFoundPage } from './components/notFoundPage';
 import { InternalFormPage } from './components/internalFormPage';
 import { GeneralErrorPage } from './components/generalErrorPage';
+import { MaintanancePage } from './components/maintainancePage';
 
 export default function App ()  {
 
@@ -18,7 +19,7 @@ export default function App ()  {
         <Routes> 
           <Route path="/" element={<HomePage/>} />
           <Route path="/externals/form" element={<FormPage/>}/>
-          <Route path="/internals/form" element={<InternalFormPage/>}/>
+          <Route path="/internals/form" element={<MaintanancePage/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
