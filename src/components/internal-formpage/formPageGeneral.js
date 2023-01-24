@@ -420,11 +420,11 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
 
                 <div class="w-100"><br/></div>
 
-                    <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
+                    {/* <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
                         <div style={{backgroundColor: "white", height: '100%', width: '100%', paddingTop: 10}}>
                             <label><PanTool style={{marginBottom: 5, marginRight: 5}} /> I Want To Be Helper <Checkbox onChange={(event) => {console.log("helper: " + event.target.checked); setHelper(event.target.checked);}}/></label>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
