@@ -250,7 +250,12 @@ export const InternalFormPage = () => {
                                             } else {
                                                 setConfirm(false);
                                                 res.json().then(json => {
-                                                    setErrors(Object.values(json).flatMap(f => f));
+                                                    setErrors(Object.values(json).flatMap(f => {
+                                                        if (typeof f === 'object') {
+                                                            return Object.values(f);
+                                                        }
+                                                        return f;
+                                                    }));
                                                 });
                                                 document.body.scrollTo(0, 0);
                                             }
