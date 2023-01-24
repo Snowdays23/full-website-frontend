@@ -128,9 +128,9 @@ export const InternalFormPage = () => {
                     <Separator number={3} ></Separator>
                     <div className="w-100"></div>
 
-                    <div className='col-11 col-lg-8'>
-                        <Alert severity="warning"> <strong> BE CAREFUL! </strong> At the moment the enrollment is open only to those who can <strong>HOST</strong> or be an <strong>HELPER</strong> for the event (you will even get a big discount) ! There will be few places left for the others later on.</Alert>
-                    </div>
+                    {/* <div className='col-11 col-lg-8'>
+                        <Alert severity="warning"> <strong> ATTENTION! </strong> Everybody can enroll now <strong> BUT</strong> there is a limit. After this, who can <strong>HOST</strong> will be still able to enroll!</Alert>
+                    </div> */}
 
                     
 
