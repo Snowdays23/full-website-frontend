@@ -9,6 +9,7 @@ import { NotFoundPage } from './components/notFoundPage';
 import { InternalFormPage } from './components/internalFormPage';
 import { GeneralErrorPage } from './components/generalErrorPage';
 import { MaintanancePage } from './components/maintainancePage';
+import { AlumniFormPage } from './components/alumniFormPage';
 
 export default function App ()  {
 
@@ -20,6 +21,7 @@ export default function App ()  {
           <Route path="/" element={<HomePage/>} />
           <Route path="/externals/form" element={<FormPage/>}/>
           <Route path="/internals/form" element={<InternalFormPage/>}/>
+          <Route path="/alumni/form" element={<AlumniFormPage/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
