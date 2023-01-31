@@ -69,7 +69,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
           dob: `${value.toDate().getFullYear()}-${new String(value.toDate().getMonth() + 1).padStart(2, '0')}-${new String(value.toDate().getDate()).padStart(2, '0')}`,
           student_nr: studnr,
           phone: phonenr,
-          university: university,
+          university: "alumni",
           gender: gender,
           needs_accomodation: needsAccomodation
         });
