@@ -214,7 +214,7 @@ export const AlumniFormPage = () => {
                                 <Separator number={2} ></Separator>
                                 <div className='row justify-content-center'>
                                     <div className='col-11 col-lg-10'>
-                                    <Alert severity="warning"><strong>IMPORTANT!</strong> The ticket includes the participation for the entire event (from the 23rd to the 26th) and NO ACCOMODATION is provided! </Alert>
+                                    <Alert severity="warning"><strong>IMPORTANT!</strong> The ticket includes the participation for the entire event (from the 23rd to the 26th) and NO ACCOMODATION will be provided by us! </Alert>
                                     </div>
                                 </div>
 
