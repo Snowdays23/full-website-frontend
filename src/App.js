@@ -10,6 +10,7 @@ import { InternalFormPage } from './components/internalFormPage';
 import { GeneralErrorPage } from './components/generalErrorPage';
 import { MaintanancePage } from './components/maintainancePage';
 import { AlumniFormPage } from './components/alumniFormPage';
+import { PartyForm } from './components/partyForm';
 
 export default function App ()  {
 
@@ -22,6 +23,7 @@ export default function App ()  {
           <Route path="/externals/form" element={<FormPage/>}/>
           <Route path="/internals/form" element={<InternalFormPage/>}/>
           <Route path="/alumni/form" element={<AlumniFormPage/>}/>
+          {/* <Route path="/party/form" element={<PartyForm/>}/> */}
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
