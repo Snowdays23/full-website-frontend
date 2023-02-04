@@ -63,9 +63,9 @@ export const Navbar = ({pageNumberNow}) => {
                         <li className="nav-item">
                             {
                                 pageNumberNow === 4 ? 
-                                <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">About Us</a>
+                                <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">FAQ</a>
                                 : 
-                                <a className="nav-link font-josefin small-text mr-2 ml-2" href="">About Us</a>
+                                <a className="nav-link font-josefin small-text mr-2 ml-2" href="" onClick={() => handleClick('/faq')} >FAQ</a>
                             }
                             
                         </li>

@@ -12,6 +12,7 @@ import { MaintanancePage } from './components/maintainancePage';
 import { AlumniFormPage } from './components/alumniFormPage';
 import { PartyForm } from './components/partyForm';
 import Sustainability from './components/other-pages/sustainability';
+import FAQ from './components/other-pages/faq';
 
 export default function App ()  {
 
@@ -31,6 +32,7 @@ export default function App ()  {
           <Route path="*" element={<NotFoundPage />} />
 
           <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
             
       </div>
