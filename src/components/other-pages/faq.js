@@ -66,7 +66,7 @@ export default class FAQ extends Component {
 
                         <div className='row justify-content-center' >
 
-                            <div className='col-5 col-lg-6 justify-left-text'>
+                            <div className='col-11 col-lg-6 justify-left-text'>
                                 <CompleteParagraph mainTitle={"GENERAL"} 
                                     titles={["Where will Snowdays23 take place?",
                                             "When will Snowdays23 take place?",
@@ -99,7 +99,7 @@ export default class FAQ extends Component {
                                 />
                             </div> 
 
-                            <div className='col-5 col-lg-6 justify-left-text'>
+                            <div className='col-11 col-lg-6 justify-left-text'>
                                 <CompleteParagraph mainTitle={"ACTIVITIES"} 
                                         titles={["Is it true I am not allowed to have any alcohol while on the slopes?",
                                                 "Is there something to do other than skiing?",
