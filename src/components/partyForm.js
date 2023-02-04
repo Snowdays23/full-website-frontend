@@ -53,7 +53,7 @@ export const PartyForm = () => {
 
     const submitForm = async evt => {
 
-        return await fetch("/api/participants", {
+        return await fetch("/api/partybeasts", {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"
