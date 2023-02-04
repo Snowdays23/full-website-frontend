@@ -47,6 +47,18 @@
     color: #304f9e;
 }
 
+.text-blue-light {
+    color: #70C6DF;
+}
+
+.text-blue-dark {
+    color: #252C5B;
+}
+
+.justify-left-text {
+    text-align: left;
+}
+
 .offset-down-1 {
     top: 2vw;
 }

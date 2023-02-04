@@ -11,6 +11,7 @@ import { GeneralErrorPage } from './components/generalErrorPage';
 import { MaintanancePage } from './components/maintainancePage';
 import { AlumniFormPage } from './components/alumniFormPage';
 import { PartyForm } from './components/partyForm';
+import Sustainability from './components/other-pages/sustainability';
 
 export default function App ()  {
 
@@ -28,6 +29,8 @@ export default function App ()  {
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
+
+          <Route path="/sustainability" element={<Sustainability />} />
         </Routes>
             
       </div>

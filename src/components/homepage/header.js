@@ -43,11 +43,11 @@ export default class Header extends Component {
 
                         <div className='d-xs-block'>
 
-                            {/* <div className='d-xs-block d-lg-none'>
+                            <div className='d-xs-block d-lg-none'>
                                 <Separator number={20} ></Separator>
                             </div>
 
-                            <Separator number={7} ></Separator> */}
+                            <Separator number={7} ></Separator>
 
                             <div className='d-xs-block d-lg-none'>
                                 <Separator number={10} ></Separator>

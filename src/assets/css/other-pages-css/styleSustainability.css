@@ -1,0 +1,15 @@
+
+
+.divisor {
+    position: absolute;
+    width: 0px;
+    height: 1065px;
+    left: 188px;
+    top: 805px;
+
+    opacity: 0.2;
+    /* Color 5 */
+
+    border: 5px solid #9BB2DC;
+    transform: rotate(-90deg);
+}
