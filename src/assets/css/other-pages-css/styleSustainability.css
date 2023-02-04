@@ -1,15 +1,25 @@
 
+.icon {
+    width: 14vw;
+    height: auto;
+}
 
-.divisor {
-    position: absolute;
-    width: 0px;
-    height: 1065px;
-    left: 188px;
-    top: 805px;
+.separator-sustainability {
 
-    opacity: 0.2;
-    /* Color 5 */
+    width: 20;
+    height: 50;
+}
 
-    border: 5px solid #9BB2DC;
-    transform: rotate(-90deg);
+@media (min-width:992px) {
+
+    .icon {
+        width: 8vw;
+        height: auto;
+    }
+
+    .separator-sustainability {
+        width: 100%;
+        height: 100%;
+    }
+
 }

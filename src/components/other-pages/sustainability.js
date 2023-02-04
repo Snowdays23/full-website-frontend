@@ -19,13 +19,13 @@ const SustainabilityCell = ({icon, text}) => (
 
         <div className='col-5'>
 
-            <img  src={icon} style={{width: "8vw", height: "auto"}} alt="Picture of mountains" />
+            <img  src={icon} className='icon' alt="Icon" />
             
         </div>
 
         <div className='col-7 justify-left-text'>
 
-            <h4 className='text-blue-dark  font-poppins h4' > <strong> {text} </strong></h4>
+            <h4 className='text-blue-dark  font-poppins normal-small-text' > <strong> {text} </strong></h4>
             
         </div>
 
@@ -38,9 +38,9 @@ const SustainabilityDoubleRow = ({icon1, icon2, text1, text2}) => (
     <>
         <div className='row justify-content-left mb-5' >
 
-            <div className='col-8 col-md-12'>
+            <div className='col-8 col-lg-12'>
 
-                <img  src={SeparatorImage}  alt="Picture of mountains" />
+                <img className='separator-sustainability' src={SeparatorImage}  alt="Separator" />
                 
             </div>
 
@@ -48,15 +48,21 @@ const SustainabilityDoubleRow = ({icon1, icon2, text1, text2}) => (
 
         <div className='row justify-content-center mb-5' >
 
-            <div className='col-5'>
+            <div className='col-11 col-lg-5'>
 
                 <SustainabilityCell icon={icon1} text={text1} />
                 
             </div>
 
-            <div className='col-1' />
+            <div className='d-none d-lg-block col-1' />
 
-            <div className='col-5'>
+            <div className='d-block d-lg-none'>
+                <Separator number={10} />
+            </div>
+
+            
+
+            <div className='col-11 col-lg-5'>
 
                 <SustainabilityCell icon={icon2} text={text2} />
                 
@@ -74,7 +80,7 @@ const SustainabilitySingleRow = ({icon, text}) => (
 
             <div className='col-12'>
 
-                <img  src={SeparatorImage}  alt="Picture of mountains" />
+                <img  src={SeparatorImage}  alt="Separator" />
                 
             </div>
 
@@ -106,7 +112,7 @@ export default class Sustainability extends Component {
                 <div className='container' >
 
                     <div className='row justify-content-center' >
-                        <div className='col-11 col-md-12 justify-left-text' >
+                        <div className='col-11 col-lg-12 justify-left-text' >
 
                             <h2 className='text-blue-light font-josefin title' >SUSTAINABILITY</h2>
 
@@ -116,13 +122,13 @@ export default class Sustainability extends Component {
 
                         <div className='row justify-content-center' >
 
-                            <div className='col-5 col-md-6 justify-left-text'>
+                            <div className='col-5 col-lg-6 justify-left-text'>
                                 <p className='font-poppins'>
                                     This year we want to take a more sustainable view of the whole event: after 20 years of Snowdays it is important to reflect on what has been, and what will become. It is our goal to ecologically improve our sports event. Such a large event can hardly achieve zero impact on the environment, nevertheless, nothing prohibits us from taking some steps toward a more sustainable event.
                                 </p>
                             </div> 
 
-                            <div className='col-5 col-md-6 justify-left-text'>
+                            <div className='col-5 col-lg-6 justify-left-text'>
                                 <p className='font-poppins'>
                                 We rely on the transparency and support of our partners in agreeing with us on sustainable practices. We can improve a number of aspects to respect the Alpine ecosystem and decrease our impact on it. 
 We are keen to use the media power of Snowdays to shed light on issues that are increasingly urgent to be addressed nowadays.
@@ -135,7 +141,7 @@ We are keen to use the media power of Snowdays to shed light on issues that are 
 
                 </div>
 
-                <Separator number = {6} />
+                <Separator number = {10} />
 
                 <div className='container' >
 
