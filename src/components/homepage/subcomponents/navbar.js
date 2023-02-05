@@ -46,26 +46,26 @@ export const Navbar = ({pageNumberNow}) => {
                         </li>
                         <li className="nav-item">{
                                 pageNumberNow === 2 ? 
-                                <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">Participants</a>
+                                <a style = {{cursor: "pointer"}}  className="nav-link active font-josefin small-text mr-2 ml-2" >Sport</a>
                                 : 
-                                <a className="nav-link font-josefin small-text mr-2 ml-2" href="">Participants</a>
+                                <a style = {{cursor: "pointer"}}   className="nav-link font-josefin small-text mr-2 ml-2"  onClick={() => handleClick('/sport')} >Sport</a>
                             }
                             
                         </li>
                         <li className="nav-item">
                             {
                                 pageNumberNow === 3 ? 
-                                <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">Sustainability</a>
+                                <a style = {{cursor: "pointer"}}  className="nav-link active font-josefin small-text mr-2 ml-2">Sustainability</a>
                                 : 
-                                <a className="nav-link font-josefin small-text mr-2 ml-2" href="" onClick={() => handleClick('/sustainability')} >Sustainability</a>
+                                <a style = {{cursor: "pointer"}}  className="nav-link font-josefin small-text mr-2 ml-2"  onClick={() => handleClick('/sustainability')} >Sustainability</a>
                             }
                         </li>
                         <li className="nav-item">
                             {
                                 pageNumberNow === 4 ? 
-                                <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">FAQ</a>
+                                <a style = {{cursor: "pointer"}}  className="nav-link active font-josefin small-text mr-2 ml-2">FAQ</a>
                                 : 
-                                <a className="nav-link font-josefin small-text mr-2 ml-2" href="" onClick={() => handleClick('/faq')} >FAQ</a>
+                                <a style = {{cursor: "pointer"}}  className="nav-link font-josefin small-text mr-2 ml-2" onClick={() => handleClick('/faq')} >FAQ</a>
                             }
                             
                         </li>

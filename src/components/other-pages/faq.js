@@ -19,7 +19,7 @@ const SubParagraph = ({title, content}) => (
         <p className='text-blue-dark font-poppins font-weight-bold font-italic normal-small-text'>
             {title}
         </p>
-        <p className='font-poppins'>
+        <p className='font-poppins text-blue-dark'>
             {content}
         </p>
 

@@ -13,6 +13,7 @@ import { AlumniFormPage } from './components/alumniFormPage';
 import { PartyForm } from './components/partyForm';
 import Sustainability from './components/other-pages/sustainability';
 import FAQ from './components/other-pages/faq';
+import {Sport} from './components/other-pages/sport';
 
 export default function App ()  {
 
@@ -33,6 +34,7 @@ export default function App ()  {
 
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/sport" element={<Sport />} />
         </Routes>
             
       </div>
