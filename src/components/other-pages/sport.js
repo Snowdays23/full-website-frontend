@@ -17,6 +17,7 @@ import SkiRace from "../../assets/img/other-pages/sport/skiRace.png";
 import { Navbar } from '../homepage/subcomponents/navbar';
 import MountainDivider from "../../assets/img/other-pages/sport/mountainDivider.svg"
 import { display } from '@mui/system';
+import { Footer } from '../homepage/subcomponents/footer';
 
 const SpiritPart = () => (
 
@@ -63,7 +64,7 @@ const SportCard = ({image, title, description}) => (
 
         <div className="col-12">
             <div className='d-none d-sm-block'>
-                <img  src={image} style={{width: "20vw", height: "auto"}} className="mb-4" alt="SportImage" />
+                <img  src={image} style={{width: "17vw", height: "auto"}} className="mb-4" alt="SportImage" />
             </div>
 
             <div className='d-block d-sm-none'>
@@ -193,6 +194,8 @@ export const Sport = () => {
                 
 
                 <Separator number = {15} />
+
+                <Footer />
 
             </div>
             
