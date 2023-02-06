@@ -21,7 +21,7 @@ export default function App ()  {
         <Routes> 
           <Route path="/" element={<HomePage/>} />
           <Route path="/externals/form" element={<FormPage/>}/>
-          <Route path="/internals/form" element={<InternalFormPage/>}/>
+          {/* <Route path="/internals/form" element={<InternalFormPage/>}/> */}
           <Route path="/alumni/form" element={<AlumniFormPage/>}/>
           <Route path="/party/form" element={<PartyForm/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
