@@ -12,6 +12,7 @@ import RecyclingIcon from "../../assets/img/other-pages/sustainability/recycling
 import MicIcon from "../../assets/img/other-pages/sustainability/micIcon.svg";
 import { Navbar } from '../homepage/subcomponents/navbar';
 import { display } from '@mui/system';
+import { Footer } from '../homepage/subcomponents/footer';
 
 const SustainabilityCell = ({icon, text}) => (
 
@@ -164,7 +165,9 @@ We are keen to use the media power of Snowdays to shed light on issues that are 
 
                 </div>   
 
-                <Separator number = {15} />
+                <Separator number = {5} />
+
+                <Footer />
 
             </div>
             

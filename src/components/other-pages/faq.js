@@ -12,6 +12,7 @@ import RecyclingIcon from "../../assets/img/other-pages/sustainability/recycling
 import MicIcon from "../../assets/img/other-pages/sustainability/micIcon.svg";
 import { Navbar } from '../homepage/subcomponents/navbar';
 import { display } from '@mui/system';
+import { Footer } from '../homepage/subcomponents/footer';
 
 const SubParagraph = ({title, content}) => (
     <>
@@ -135,14 +136,9 @@ export default class FAQ extends Component {
 
                 </div>
 
-                <Separator number = {10} />
+                <Separator number = {5} />
 
-                <div className='container' >
-
-
-                </div>   
-
-                <Separator number = {15} />
+                <Footer/>
 
             </div>
             

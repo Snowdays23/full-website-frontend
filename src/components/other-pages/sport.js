@@ -193,7 +193,7 @@ export const Sport = () => {
 
                 
 
-                <Separator number = {15} />
+                <Separator number = {5} />
 
                 <Footer />
 

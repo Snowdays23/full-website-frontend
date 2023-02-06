@@ -24,6 +24,7 @@ import "../../assets/css/bootstrap-override.css";
 import "../../assets/css/style.css";
 import "../../assets/css/styleBody4.css";
 import ImagesCarousel from './subcomponents/images-carousel';
+import { Footer } from './subcomponents/footer';
 
 export default class Body5 extends Component {
     
@@ -73,7 +74,7 @@ export default class Body5 extends Component {
 
                         </div>
 
-                        <div>
+                        {/* <div>
 
                             <div className='row justify-content-center relative' >
 
@@ -85,13 +86,14 @@ export default class Body5 extends Component {
 
                             </div>  
 
-                        </div>
+                        </div> */}
+                        <Footer />
                     </div>  
 
-                    <div id="wrapper-outside-body-5" className='wrapper-outside-body relative offset-up-1'>
-                     </div>
+                    {/* <div id="wrapper-outside-body-5" className='wrapper-outside-body relative offset-up-1'>
+                     </div> */}
 
-                    <div className='relative overlay-1 offset-up-21'>
+                    {/* <div className='relative overlay-1 offset-up-21'>
 
                         <img src={bgMountains2} id="bg-mountains-end" className='absolute offset-down-3 offset-right-0' alt="Stylized mountains"/> 
                             
@@ -106,13 +108,13 @@ export default class Body5 extends Component {
 
                                 </div>
 
-                            </div>    
+                            </div>     */}
 
                             {/* <div className='d-none d-sm-block'>
                                 <Separator number={10} ></Separator>
                             </div> */}
 
-                            <div className='d-none d-lg-block'>
+                            {/* <div className='d-none d-lg-block'>
                                 <Separator number={15} ></Separator>
                             </div>
 
@@ -133,7 +135,7 @@ export default class Body5 extends Component {
 
 
 
-                    </div>                    
+                    </div>                     */}
 
                 </div>
 

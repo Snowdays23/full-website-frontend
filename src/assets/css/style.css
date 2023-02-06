@@ -47,6 +47,11 @@
     font-size: 3vw;
 }
 
+.small-small-text {
+
+    font-size: 1.3vw;
+}
+
 .text-blue {
     color: #304f9e;
 }
@@ -264,6 +269,10 @@
 
     .small-text {
         font-size: 1.3vw;
+    }
+
+    .small-small-text {
+        font-size: 1.2vw;
     }
 
 }
