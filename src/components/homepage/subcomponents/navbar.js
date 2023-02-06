@@ -36,14 +36,14 @@ export const Navbar = ({pageNumberNow}) => {
 
                 <div className="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item" >
+                        {/* <li className="nav-item" >
                             {
                                 pageNumberNow === 1 ? 
                                 <a className="nav-link active font-josefin small-text mr-2 ml-2" href="">Sponsors</a>
                                 : 
                                 <a className="nav-link font-josefin small-text mr-2 ml-2" href="">Sponsors</a>
                             }
-                        </li>
+                        </li> */}
                         <li className="nav-item">{
                                 pageNumberNow === 2 ? 
                                 <a style = {{cursor: "pointer"}}  className="nav-link active font-josefin small-text mr-2 ml-2" >Sport</a>

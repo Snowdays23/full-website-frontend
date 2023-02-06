@@ -37,11 +37,11 @@ const SustainabilityCell = ({icon, text}) => (
 const SustainabilityDoubleRow = ({icon1, icon2, text1, text2}) => (
 
     <>
-        <div className='row justify-content-left mb-5' >
+        <div className='row mb-5' >
 
-            <div className='col-8 col-lg-12'>
+            <div className='col-12'>
 
-                <img className='separator-sustainability' src={SeparatorImage}  alt="Separator" />
+                <img  src={SeparatorImage} style = {{width: "100%"}} alt="Separator" />
                 
             </div>
 
@@ -81,7 +81,7 @@ const SustainabilitySingleRow = ({icon, text}) => (
 
             <div className='col-12'>
 
-                <img  src={SeparatorImage}  alt="Separator" />
+                <img  src={SeparatorImage} style = {{width: "100%"}} alt="Separator" />
                 
             </div>
 
@@ -124,13 +124,13 @@ export default class Sustainability extends Component {
                         <div className='row justify-content-center' >
 
                             <div className='col-5 col-lg-6 justify-left-text'>
-                                <p className='font-poppins text-blue-dark'>
+                                <p className='font-poppins text-blue-dark medium-text'>
                                     This year we want to take a more sustainable view of the whole event: after 20 years of Snowdays it is important to reflect on what has been, and what will become. It is our goal to ecologically improve our sports event. Such a large event can hardly achieve zero impact on the environment, nevertheless, nothing prohibits us from taking some steps toward a more sustainable event.
                                 </p>
                             </div> 
 
                             <div className='col-5 col-lg-6 justify-left-text'>
-                                <p className='font-poppins text-blue-dark'>
+                                <p className='font-poppins text-blue-dark medium-text'>
                                 We rely on the transparency and support of our partners in agreeing with us on sustainable practices. We can improve a number of aspects to respect the Alpine ecosystem and decrease our impact on it. 
 We are keen to use the media power of Snowdays to shed light on issues that are increasingly urgent to be addressed nowadays.
                                 </p>
@@ -169,7 +169,7 @@ We are keen to use the media power of Snowdays to shed light on issues that are 
 
                 <Footer />
 
-            </div>
+            </div>  
             
             
         )

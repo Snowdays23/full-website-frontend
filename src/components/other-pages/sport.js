@@ -29,17 +29,17 @@ const SpiritPart = () => (
 
         <div className='col-11 col-lg-12' >
 
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             As you can imagine, Snowdays isn’t just about sports. We are more than thrilled to see how much SPIRIT you will bring to Bozen. The <strong> SPIRIT CUP </strong> is the greatest competition which consists in showing the most united, original and party animal team.
         </p>
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             At the basecamp and during the event you will have the chance to collect many points through activities and challenges. The <strong> SPIRIT CUP </strong> is the greatest competition which consists in showing the most united, original and party animal team. Always under the respect of the rules and the common coexistence! The competition will measure the spirit of each team through games, challenges and engagement. 
             For Snowdays 2023 we want you to show us your <strong> REAL SPIRIT </strong>. 
         </p>
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             Once you have reached the ski slopes, in addition to the sporting competitions, you will be able to participate in many other competitions and races, which will be crucial in bringing home the Spirit Cup. Some of these activities include <strong> mascot race </strong> , <strong> tug-of-war </strong> , <strong> flunkyball </strong> and be ready to find out more at the event!
         </p>
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             The creation of the Real Spirit is something that has as cornerstones the following: respect among each other, stealing other’s Uni items and personal items is something that won’t be tolerated. No matter how well you will be performing in all activities, if you are caught stealing or similar stuff you will be excluded from the Spirit Cup and related things.
         </p>
 
@@ -78,7 +78,7 @@ const SportCard = ({image, title, description}) => (
 
         <div className='col-11 col-lg-12' >
 
-            <p className='text-blue-dark font-poppins mb-4'> {description} </p>
+            <p className='text-blue-dark font-poppins mb-4 medium-text'> {description} </p>
         </div>
 
     </div>
@@ -94,10 +94,10 @@ const SportPart = () => (
 
         <div className='col-11 col-lg-12' >
 
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             Who says mountains are just about skiing?! Be ready to take part in our amazing sports competitons in the heart of the Dolomites
         </p>
-        <p className='text-blue-dark font-poppins mb-3' >
+        <p className='text-blue-dark font-poppins mb-3 medium-text' >
             Snowdays, you have been missed! Finally, after a looong break, you will have the possibility to compete in different sports and try to win the prestigious Sports Cup! At the basecamp we prepared a wide range of activities you will love! We have selected 3 different sports competitions. 
         </p>
 
