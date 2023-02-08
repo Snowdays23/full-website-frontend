@@ -24,13 +24,18 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
     const [email, setEmail] = React.useState('');
     const [phonenr, setPhonenr] = React.useState('');
 
+    const [emailValid, setEmailValid] = React.useState(false);
+
+    const isEmailValid = (email) => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(unibz|cons\.bz).it$/.test(email);
+    
+
     const [visibleInfo1, setVisibleInfo1] = React.useState(false);
     const [visibleInfo2, setVisibleInfo2] = React.useState(false);
 
 
     React.useEffect(() => {
       
-      if(name !== ''&& lastName !== '' && email !== ''&&  phonenr !== '' ) {
+      if(name !== ''&& lastName !== '' && email !== '' &&  phonenr !== '' && emailValid ) {
         setFilledGeneral(true);
     
         setGeneralData({
@@ -46,7 +51,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
         setGeneralData({});
       }
 
-    },[name, lastName, email, phonenr]);
+    },[name, lastName, email, phonenr, emailValid]);
     
         return (
             <div>              
@@ -62,7 +67,7 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 <div className='row justify-content-center'>
 
                 <div className='col-11 col-sm-11 col-lg-10' style={{position: "relative", right: 0 }}>
-                    {visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you have to sign up with the same <strong> email </strong> that you sent when you requested to participate to Snowdays.</Alert> : <div></div> }
+                    { visibleInfo1 ? <Alert severity="info"><strong>Useful info:</strong> you must use your<strong> SHORT </strong>unibz<strong> email </strong>. Ex: sname@unibz.it </Alert> : <div></div> }
                     
                     { visibleInfo2 ? <Alert severity="info"><strong>Useful info:</strong> phone number has to be of the format: <strong>'+prefix phone_number'</strong>, example: <strong>'+49 3202020202'</strong> (with a space between prefix and phone number)</Alert> : <div></div> }
                 </div>
@@ -79,8 +84,18 @@ export const FormPageGeneral = ({setFilledGeneral, setGeneralData}) => {
                 </div>
                 <Separator number={2} ></Separator>
                 <div className='row justify-content-center'>
-                    <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
-                        <TextField required id="filled-basic" label="Email" variant="filled" style={{width:'90%'}}  onChange = {(val) => setEmail(val.target.value)} onFocus = {() => setVisibleInfo1(true)} onBlur = { () => setVisibleInfo1(false)} error={ email === ''} />
+                <div className='col-6 col-lg-5' style={{position: "relative", right: -13}}>
+                        <TextField required id="filled-basic" label="Unibz Email" variant="filled" style={{width:'90%'}}  onChange = {(val) =>  {
+                          if(isEmailValid(val.target.value)){
+                            setEmail(val.target.value);
+                            setEmailValid(true);
+                          }else{
+                            setEmail('');
+                            setEmailValid(false);
+                          }}}
+                          error={!emailValid}
+                          onFocus = {() => setVisibleInfo1(true)} onBlur = { () => setVisibleInfo1(false)}
+                          />
                     </div>
                     <div className="d-none d-lg-block col-lg-1"></div>
                     <div className='col-6 col-lg-5 ' style={{position: "relative", right: 13}}>
