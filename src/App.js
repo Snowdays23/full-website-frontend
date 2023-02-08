@@ -14,7 +14,7 @@ import { PartyForm } from './components/partyForm';
 import Sustainability from './components/other-pages/sustainability';
 import FAQ from './components/other-pages/faq';
 import {Sport} from './components/other-pages/sport';
-import Sponsor from './components/other-pages/sponsor';
+import {Sponsor} from './components/other-pages/sponsor';
 
 export default function App ()  {
 

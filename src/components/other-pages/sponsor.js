@@ -19,8 +19,8 @@ import { Footer } from '../homepage/subcomponents/footer';
 // )
 
  
-export default class Sponsor extends Component {
-    render () {
+export const Sponsor = () => {
+
         return (
 
             <div className = "wrapper-outside  ">
@@ -36,17 +36,7 @@ export default class Sponsor extends Component {
 
                             <h2 className='text-blue-light font-josefin title' >SPONSOR</h2>
 
-                            <div className = 'row justify-content-center' style={{width : "100%"}} >
-                                <div className = "col-4">
-                                    <img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" />
-                                </div>
-                                <div className = "col-4">
-                                    <img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" />
-                                </div>
-                                <div className = "col-4">
-                                    <img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" />
-                                </div>
-                            </div>
+                            
 
 
 
@@ -58,6 +48,18 @@ export default class Sponsor extends Component {
 
                             <div>
                                 <h3 className='text-blue-light font-josefin subtitle' > MAIN SPONSOR </h3>
+                            </div>
+
+                            <div className = 'row justify-content-left' style={{width : "100%"}} >
+                                <div className = "col-12 col-md-4">
+                                    <a href="" target="_blank" /*onFocus={() => setWidth("20vw")} onBlur={() => setWidth("17vw")}*/><img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" /></a>
+                                </div>
+                                <div className = "col-11 col-md-4">
+                                    <img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" />
+                                </div>
+                                <div className = "col-11 col-md-4">
+                                    <img  src={SpiritImage} style={{width: "17vw", height: "auto"}} alt="Icon" />
+                                </div>
                             </div>
 
                         </div>
@@ -95,5 +97,4 @@ export default class Sponsor extends Component {
             
             
         )
-    }
 }
