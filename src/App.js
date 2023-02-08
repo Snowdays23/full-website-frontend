@@ -23,7 +23,7 @@ export default function App ()  {
           <Route path="/externals/form" element={<FormPage/>}/>
           {/* <Route path="/internals/form" element={<InternalFormPage/>}/> */}
           <Route path="/alumni/form" element={<AlumniFormPage/>}/>
-          {/* <Route path="/party/form" element={<PartyForm/>}/> */}
+          <Route path="/party/form" element={<PartyForm/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
