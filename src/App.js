@@ -22,7 +22,7 @@ export default function App ()  {
           <Route path="/" element={<HomePage/>} />
           <Route path="/externals/form" element={<FormPage/>}/>
           {/* <Route path="/internals/form" element={<InternalFormPage/>}/> */}
-          <Route path="/alumni/form" element={<AlumniFormPage/>}/>
+          {/* <Route path="/alumni/form" element={<AlumniFormPage/>}/> */}
           <Route path="/party/form" element={<PartyForm/>}/>
           <Route path="/success-checkout" element={<SuccessCheckoutPage/>}/>
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
