@@ -73,69 +73,9 @@ export default class Body5 extends Component {
                             </div>
 
                         </div>
-
-                        {/* <div>
-
-                            <div className='row justify-content-center relative' >
-
-                                <div className='col-lg-6 col-10'>
-
-                                    <h2 className='text-blue font-josefin title'>''THERE ARE NO DAYS LIKE SNOWDAYS''</h2>
-
-                                </div>
-
-                            </div>  
-
-                        </div> */}
-                        <Footer />
+                        <Footer version="light_blue" />
                     </div>  
 
-                    {/* <div id="wrapper-outside-body-5" className='wrapper-outside-body relative offset-up-1'>
-                     </div> */}
-
-                    {/* <div className='relative overlay-1 offset-up-21'>
-
-                        <img src={bgMountains2} id="bg-mountains-end" className='absolute offset-down-3 offset-right-0' alt="Stylized mountains"/> 
-                            
-                        <div className = "container relative offset-down-20">
-
-                            <div className='row justify-content-center' >
-
-                                <div className='col-lg-8 col-10'>
-
-                                    <h2 className='text-white font-josefin subtitle'>CONTACT INFORMATION</h2>
-                                    <h5 className='font-poppins normal-text text-white'>info@snowdays.it</h5>
-
-                                </div>
-
-                            </div>     */}
-
-                            {/* <div className='d-none d-sm-block'>
-                                <Separator number={10} ></Separator>
-                            </div> */}
-
-                            {/* <div className='d-none d-lg-block'>
-                                <Separator number={15} ></Separator>
-                            </div>
-
-                            <div className=' row justify-content-center offset-down-10 mt-5 pt-5'> 
-
-                                <ButtonsTable buttons = {[instagram, youtube, facebook, tiktok, linkedin]} links = {["https://www.instagram.com/snowdays.bolzano/","https://www.youtube.com/channel/UCthdDzE2fTo47z26YIDDf-g","https://www.facebook.com/Snowdays.Bolzano/", "https://www.tiktok.com/@snowdays.bz", "https://www.linkedin.com/company/snowdays"]}></ButtonsTable>
-                            </div>
-
-                            <div className='d-none d-lg-block'>
-                                <Separator number={12} ></Separator>
-                            </div>
-
-                            <div className='row justify-content-center pb-5 '>
-                                <span className='small-text text-white blue-shadow'>© Copyright 2022 Snowdays. All Rights Reserved.</span>
-                            </div>
-
-                        </div>
-
-
-
-                    </div>                     */}
 
                 </div>
 

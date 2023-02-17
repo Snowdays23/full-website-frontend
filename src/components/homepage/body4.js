@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import bgMountains2 from '../../assets/img/mountains_illustration2_white.svg';
-import alpenstoff from "../../assets/img/sponsorsLogo/Alpenstoff.png";
-import clipper from "../../assets/img/sponsorsLogo/clipper.png";
-import fischer from "../../assets/img/sponsorsLogo/Fischer.png";
-import loacker from "../../assets/img/sponsorsLogo/loacker.png";
-import marlene from "../../assets/img/sponsorsLogo/Marlene.png";
-import pompadour from "../../assets/img/sponsorsLogo/Pompadour.png";
-import redBull from "../../assets/img/sponsorsLogo/Red-Bull.png";
-import salewa from "../../assets/img/sponsorsLogo/Salewa.png";
+import Two117 from '../../assets/img/sponsorsLogo/currentSponsors/2117.png';
+import Carezza from '../../assets/img/sponsorsLogo/currentSponsors/Carezza.png';
+import Clipper from '../../assets/img/sponsorsLogo/currentSponsors/Clipper.png';
+import Decathlon from '../../assets/img/sponsorsLogo/currentSponsors/Decathlon.png';
+import Fischer from '../../assets/img/sponsorsLogo/currentSponsors/Fischer.png';
+import FishermansFriend from '../../assets/img/sponsorsLogo/currentSponsors/FishermansFriend.png';
+import Forst from '../../assets/img/sponsorsLogo/currentSponsors/Forst.png';
+import Fuchs from '../../assets/img/sponsorsLogo/currentSponsors/Fuchs.png';
+import Gixeh from '../../assets/img/sponsorsLogo/currentSponsors/Gixeh.png';
+import Loaker from '../../assets/img/sponsorsLogo/currentSponsors/Loaker.png';
+import Markas from '../../assets/img/sponsorsLogo/currentSponsors/Markas.png';
+import Marlene from '../../assets/img/sponsorsLogo/currentSponsors/Marlene.png';
+import Muchacho from '../../assets/img/sponsorsLogo/currentSponsors/Muchacho.png';
+import OneWay from '../../assets/img/sponsorsLogo/currentSponsors/OneWay.png';
+import Pompadour from '../../assets/img/sponsorsLogo/currentSponsors/Pompadour.png';
+import Smith from '../../assets/img/sponsorsLogo/currentSponsors/Smith.png';
+import Volksbank from '../../assets/img/sponsorsLogo/currentSponsors/Volksbank.png';
+import Wuerth from '../../assets/img/sponsorsLogo/currentSponsors/Wuerth.png';
+
 import "../../assets/css/bootstrap.min.css";
 import "../../assets/css/bootstrap-override.css";
 import "../../assets/css/style.css";
@@ -42,7 +53,7 @@ export default class Body4 extends Component {
                         <div className='col-lg-6 col-10'> 
 
                             <h2 className='title font-josefin '>SPONSORS & PARTNERS</h2>
-                            <h5 className='font-poppins normal-text'>we had the great opportunity to work with brands like:</h5>
+                            <h5 className='font-poppins normal-text'>we are working with brands like:</h5>
 
                         </div>
 
@@ -50,7 +61,7 @@ export default class Body4 extends Component {
 
                         <div className='col-lg-8 col-10 mt-3'>
                             <div className='my-4'>
-                                <SponsorsRoll logos={[alpenstoff, clipper, fischer, loacker, marlene, pompadour, redBull, salewa]}/>
+                                <SponsorsRoll logos={[Two117, Carezza, Clipper, Decathlon, Fischer, FishermansFriend, Forst, Fuchs, Gixeh, Loaker, Markas, Marlene, Muchacho, OneWay, Pompadour, Smith, Volksbank, Wuerth]}/>
                             </div>
                         </div>
                     </div>

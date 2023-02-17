@@ -1,5 +1,6 @@
 
 import FooterPayoff from "../../../assets/img/footer/footerBandPayoff.svg";
+import FooterPayoff2 from "../../../assets/img/footer/footerBandPayoffBlue.svg";
 import FooterBottom from "../../../assets/img/footer/bottomFooter.svg";
 import FooterBottomCell from "../../../assets/img/footer/bottomFooterCell.svg";
 import FooterLogo from "../../../assets/img/footer/footerLogo.svg";
@@ -116,63 +117,6 @@ const FooterCell = () => (
 
                     </div>
 
-                    {/* <div className = "col-4" style={{paddingLeft: 40}} >
-                        <div className="row" style={{display: "flex", alignItems: "center", marginLeft : 10}}>
-
-                            <div className="col-2">
-                                <img src={FooterLogo} style = {{width : "5vw", height: "auto"}} />
-
-                            </div>
-
-                            <div className="col-10">
-                                <div className = "row justify-content-center">
-                                    <p className="font-poppins text-white small-small-text">
-                                        © Copyright 2022 Snowdays. All Rights Reserved
-                                    </p>
-                                    <p className="font-poppins text-white small-small-text">
-                                        <a href={TermsAndCondition} target="_blank" className="text-white "> <u>Terms & Conditions</u></a> &nbsp; &nbsp; <a href={PrivacyPolicy} target="_blank" className="text-white"><u>Privacy Policy</u></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-                    {/* <div className="col-2"></div>
-
-                    <div className = "col-5" style={{paddingLeft: 40}}>
-
-                        <div className="row justify-content-center" style={{marginLeft : 10, marginRight : 10}} >
-
-                            <div className="col-5">
-
-                                <h1 className = "font-josefin text-white fw-bold small-small-text">CONTACT US</h1>
-                                <p className = "font-poppins text-white fw-bold small-small-text" >
-                                        info@snowdays.it
-                                </p>
-
-                            </div>
-
-                            <div className="col-7" >
-
-                                <h1 className = "font-josefin text-white fw-bold  small-small-text">FOLLOW US</h1>
-                                <p className = "font-poppins text-white fw-bold " >
-
-                                        <SocialButton img = {InstagramLogo} link = {"https://www.instagram.com/snowdays.bolzano/"} />
-                                        <SocialButton img = {FacebookLogo} link = {"https://www.facebook.com/Snowdays.Bolzano/"} />
-                                        <SocialButton img = {LinkedinLogo} link = {"https://www.linkedin.com/company/snowdays"} />
-                                        <SocialButton img = {TiktokLogo} link = { "https://www.tiktok.com/@snowdays.bz"} />
-                                        <SocialButton img = {YoutubeLogo} link = {"https://www.youtube.com/channel/UCthdDzE2fTo47z26YIDDf-g"} />
-
-                                </p>
-
-                            </div>
-                        </div>
-                        
-                    </div> */}
-
-
-
                 </div>
 
 
@@ -274,9 +218,14 @@ const FooterInfo = () => (
     </div>
 )
 
-export const Footer = () => (
+export const Footer = ({version}) => (
     <div>
-        <img src={FooterPayoff} style = {{width: "100vw", height: "auto", position: "relative"}} className = "offset-down-3" />
+        {
+            version === "light_blue" ?
+            <img src={FooterPayoff2} style = {{width: "100vw", height: "auto", position: "relative"}} className = "offset-down-3" />
+            : 
+            <img src={FooterPayoff} style = {{width: "100vw", height: "auto", position: "relative"}} className = "offset-down-3" />
+        }
         <FooterInfo />
     </div>
 )
