@@ -13,6 +13,10 @@ import MicIcon from "../../assets/img/other-pages/sustainability/micIcon.svg";
 import { Navbar } from '../homepage/subcomponents/navbar';
 import { display } from '@mui/system';
 import { Footer } from '../homepage/subcomponents/footer';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { useState } from 'react';
+import { FemaleSharp } from '@mui/icons-material';
 
 const SubParagraph = ({title, content}) => (
     <>
@@ -27,7 +31,21 @@ const SubParagraph = ({title, content}) => (
     </>
 )
 
+function getWindowDimensions() {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  }
+
 const CompleteParagraph = ({mainTitle, titles, contents}) => {
+
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    const visibility = windowDimensions.width < 992 ? false : true;
+
+    const [visibleContent, setVisibleContent] = useState(visibility);
 
     const result = titles.map((title, index) => (
         <SubParagraph title = {title} content = {contents[index]} />
@@ -35,10 +53,17 @@ const CompleteParagraph = ({mainTitle, titles, contents}) => {
     
     return( 
         <>
-            <div>
-                <h3 className='text-blue-light font-josefin subtitle' > {mainTitle}</h3>
+            <div >
+                <h3 className='text-blue-light font-josefin subtitle' style={{display:"inline-block"}} > {mainTitle}</h3>
+                <span className='text-blue-light font-josefin' style = {{cursor: "pointer"}} onClick={() => setVisibleContent(!visibleContent)}> {
+                    !visibleContent ? 
+                    <KeyboardArrowUpIcon style= {{fontSize : "2em"}} />
+                    : 
+                    <KeyboardArrowDownIcon style= {{fontSize : "2em"}}/>
+                }  </span>
             </div>
-            { result } 
+            { visibleContent ? 
+            result : <></>} 
         </>
     )
 
@@ -67,7 +92,7 @@ export default class FAQ extends Component {
 
                         <div className='row justify-content-center' >
 
-                            <div className='col-11 col-lg-6 justify-left-text'>
+                            <div className='col-10 col-lg-6 justify-left-text ' style={{width: "80vw"}}>
                                 <CompleteParagraph mainTitle={"GENERAL"} 
                                     titles={["Where will Snowdays23 take place?",
                                             "When will Snowdays23 take place?",
@@ -100,7 +125,7 @@ export default class FAQ extends Component {
                                 />
                             </div> 
 
-                            <div className='col-11 col-lg-6 justify-left-text'>
+                            <div className='col-10  col-lg-6 justify-left-text'>
                                 <CompleteParagraph mainTitle={"ACTIVITIES"} 
                                         titles={["Is it true I am not allowed to have any alcohol while on the slopes?",
                                                 "Is there something to do other than skiing?",
