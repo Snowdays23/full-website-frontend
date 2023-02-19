@@ -25,6 +25,10 @@ import Pompadour from '../../assets/img/sponsorsLogo/currentSponsors/Pompadour.p
 import Smith from '../../assets/img/sponsorsLogo/currentSponsors/Smith.png';
 import Volksbank from '../../assets/img/sponsorsLogo/currentSponsors/Volksbank.png';
 import Wuerth from '../../assets/img/sponsorsLogo/currentSponsors/Wuerth.png';
+import BeerBaller from '../../assets/img/sponsorsLogo/currentSponsors/beer_baller.png';
+import EnterpriseSrl from '../../assets/img/sponsorsLogo/currentSponsors/enterprise_srl.png';
+import RedBull from '../../assets/img/sponsorsLogo/currentSponsors/red_bull.png';
+import StsSecurity from '../../assets/img/sponsorsLogo/currentSponsors/sts_security.png';
 
 
 
@@ -86,7 +90,9 @@ export const Sponsor = () => {
 
                             <SponsorSection title="MAIN SPONSOR" 
                                 images = {[Volksbank, Forst, Wuerth]}
-                                links={["","",""]} />
+                                links={["https://volksbank.onboard.org/jobs/jm2PpqGk/form?show_logo=true&from_career_page=true",
+                                "https://www.forst.it/",
+                                "https://www.wuerth.it/lavoraconnoi/candidatura-spontanea/"]} />
 
                         </div>
 
@@ -96,7 +102,12 @@ export const Sponsor = () => {
 
                             <SponsorSection title="OFFICIAL SPONSOR" 
                                 images = {[Two117, Clipper, Smith, Fischer, Decathlon, Gixeh]}
-                                links={["","","","","",""]} />
+                                links={["https://2117.se/",
+                                "https://www.clipperitalia.it/",
+                                "https://www.smithoptics.com/",
+                                "https://www.fischersports.com/",
+                                "https://lavoraconnoi.decathlon-careers.it/it/annonces",
+                                "https://www.gizeh-online.com/it/"]} />
 
                         </div>
 
@@ -105,8 +116,9 @@ export const Sponsor = () => {
                         <div className='row justify-content-center' >
 
                             <SponsorSection title="OFFICIAL PARTNER" 
-                                images = {[Markas]}
-                                links={["",""]} />
+                                images = {[Markas, StsSecurity]}
+                                links={["https://www.markas.com/it/markas-impresa-multiservizi-1.html",
+                                "https://www.sts-security.it/"]} />
 
                         </div>
 
@@ -116,7 +128,7 @@ export const Sponsor = () => {
 
                             <SponsorSection title="MAIN PARTNER" 
                                 images = {[Carezza]}
-                                links={[""]} />
+                                links={["https://carezza.it/it"]} />
 
                         </div>
 
@@ -125,8 +137,15 @@ export const Sponsor = () => {
                         <div className='row justify-content-center' >
 
                             <SponsorSection title="SPONSORS" 
-                                images = {[Pompadour, Marlene, Fuchs, FishermansFriend, Loaker, OneWay, Muchacho]}
-                                links={["","","","","","",""]} />
+                                images = {[Pompadour, Marlene, Fuchs, FishermansFriend, BeerBaller, Loaker, RedBull, Muchacho]}
+                                links={["https://www.pompadour.it/",
+                                "https://www.marlene.it/de/der-apfel-aus-suedtirol.html",
+                                "http://www.fuchs-cereals.com/de/information/index.asp",
+                                "https://fishermansfriend.com/it-it",
+                                "https://en.beerballer.com/",
+                                "https://www.loacker.com/int/en/",
+                                "https://www.redbull.com/it-it/",
+                                "http://www.muchachocondom.com/"]} />
 
                         </div>
 
@@ -135,8 +154,8 @@ export const Sponsor = () => {
                         <div className='row justify-content-center' >
 
                             <SponsorSection title="EXCLUSIVE BEVERAGE PARTNER" 
-                                images = {[Carezza]}
-                                links={[""]} />
+                                images = {[EnterpriseSrl]}
+                                links={["http://enterprisesrl.it/"]} />
 
                         </div>
 
