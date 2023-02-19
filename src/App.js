@@ -11,6 +11,10 @@ import { GeneralErrorPage } from './components/generalErrorPage';
 import { MaintanancePage } from './components/maintainancePage';
 import { AlumniFormPage } from './components/alumniFormPage';
 import { PartyForm } from './components/partyForm';
+import Sustainability from './components/other-pages/sustainability';
+import FAQ from './components/other-pages/faq';
+import {Sport} from './components/other-pages/sport';
+import {Sponsor} from './components/other-pages/sponsor';
 
 export default function App ()  {
 
@@ -28,6 +32,11 @@ export default function App ()  {
           <Route path="/unsuccess-checkout" element={<UnsuccessCheckoutPage/>}/>
           <Route path="/error" element={<GeneralErrorPage/>}/>
           <Route path="*" element={<NotFoundPage />} />
+
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/sport" element={<Sport />} />
+          <Route path="/sponsor" element={<Sponsor />} />
         </Routes>
             
       </div>

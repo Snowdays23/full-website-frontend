@@ -39,12 +39,41 @@
     font-size: 4vw;
 }
 
+.normal-small-text {
+    font-size: 4.5vw;
+}
+
+.medium-text {
+    font-size: 4vw;
+}
+
 .small-text {
     font-size: 3vw;
 }
 
+.small-small-text {
+
+    font-size: 1.3vw;
+}
+
 .text-blue {
     color: #304f9e;
+}
+
+.text-blue-light {
+    color: #70C6DF;
+}
+
+.text-blue-dark {
+    color: #252C5B;
+}
+
+.text-grey-light {
+    color: #c9cad6;
+}
+
+.justify-left-text {
+    text-align: left;
 }
 
 .offset-down-1 {
@@ -238,8 +267,20 @@
         font-size: 2vw;
     }
 
+    .normal-small-text {
+        font-size: 1.7vw;
+    }
+
     .small-text {
         font-size: 1.3vw;
+    }
+
+    .small-small-text {
+        font-size: 1.2vw;
+    }
+
+    .medium-text {
+        font-size: 1.2vw;
     }
 
 }

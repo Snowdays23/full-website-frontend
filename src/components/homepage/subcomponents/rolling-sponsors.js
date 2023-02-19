@@ -5,6 +5,7 @@ import "../../../assets/css/bootstrap-override.css";
 import "../../../assets/css/style.css";
 import "../../../assets/css/rolling-sponsors.css";
 
+
 export default function SponsorsRoll({logos}) {
     const spawnLogo = logo => {
         const div = document.createElement("div");
